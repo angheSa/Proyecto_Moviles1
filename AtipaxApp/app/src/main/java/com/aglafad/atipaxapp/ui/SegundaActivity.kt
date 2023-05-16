@@ -3,15 +3,19 @@ package com.aglafad.atipaxapp.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.aglafad.atipaxapp.R
 import com.aglafad.atipaxapp.databinding.ActivitySegundaBinding
+import com.aglafad.atipaxapp.ui.views.InicioFragmentDirections
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class SegundaActivity : AppCompatActivity() {
+
+    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivitySegundaBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +31,7 @@ class SegundaActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-
+                R.id.inicioFragment
             )
         )
 
@@ -35,8 +39,12 @@ class SegundaActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         bottomNavigation.setupWithNavController(navController)
 
-    }
 
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
 
 
 }

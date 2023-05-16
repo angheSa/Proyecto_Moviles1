@@ -13,14 +13,4 @@
             android:title=""
             />
 
-        <item
-            android:id="@+id/hFragment"
-            android:icon="@drawable/ic_home"
-            android:title=""
-            />
-
-
-
-
-
 </menu>
