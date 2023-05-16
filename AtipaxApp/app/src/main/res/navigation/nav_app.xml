@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_app"
+    app:startDestination="@id/inicioFragment">
+
+
+    <fragment
+        android:id="@+id/inicioFragment"
+        android:name="com.aglafad.atipaxapp.ui.views.InicioFragment"
+        android:label="fragment_inicio"
+        tools:layout="@layout/fragment_inicio" >
+        <action
+            android:id="@+id/action_inicioFragment_to_manteHotelFragment"
+            app:destination="@id/manteHotelFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_manteTourFragment"
+            app:destination="@id/manteTourFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_manteVentaFragment"
+            app:destination="@id/manteVentaFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_consPaquetesFragment"
+            app:destination="@id/consPaquetesFragment" />
+        <action
+            android:id="@+id/action_inicioFragment_to_consFullDaysFragment"
+            app:destination="@id/consFullDaysFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/manteHotelFragment"
+        android:name="com.aglafad.atipaxapp.ui.views.ManteHotelFragment"
+        android:label="fragment_mante_hotel"
+        tools:layout="@layout/fragment_mante_hotel" />
+    <fragment
+        android:id="@+id/manteVentaFragment"
+        android:name="com.aglafad.atipaxapp.ui.views.ManteVentaFragment"
+        android:label="fragment_mante_venta"
+        tools:layout="@layout/fragment_mante_venta" />
+    <fragment
+        android:id="@+id/consFullDaysFragment"
+        android:name="com.aglafad.atipaxapp.ui.views.ConsFullDaysFragment"
+        android:label="fragment_cons_full_days"
+        tools:layout="@layout/fragment_cons_full_days" />
+    <fragment
+        android:id="@+id/consPaquetesFragment"
+        android:name="com.aglafad.atipaxapp.ui.views.ConsPaquetesFragment"
+        android:label="fragment_cons_paquetes"
+        tools:layout="@layout/fragment_cons_paquetes" />
+    <fragment
+        android:id="@+id/manteTourFragment"
+        android:name="com.aglafad.atipaxapp.ui.views.ManteTourFragment"
+        android:label="fragment_mante_tour"
+        tools:layout="@layout/fragment_mante_tour" />
+</navigation>

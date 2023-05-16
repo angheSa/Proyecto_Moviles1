@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="140dp"
+        android:text="Bienvenido a Atipax"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imgBtnPaquete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="25dp"
+        android:contentDescription="botonPaquete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:srcCompat="@mipmap/paquete" />
+
+    <ImageButton
+        android:id="@+id/imgBtnFullDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="25dp"
+        android:contentDescription="botonFullDay"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnPaquete"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:srcCompat="@mipmap/full" />
+
+    <ImageButton
+        android:id="@+id/imgBtnHotel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="64dp"
+        android:contentDescription="botonHotel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnPaquete"
+        app:srcCompat="@mipmap/hotel" />
+
+    <ImageButton
+        android:id="@+id/imgBtnTour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="64dp"
+        android:contentDescription="botonTour"
+        app:layout_constraintStart_toEndOf="@+id/imgBtnHotel"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnFullDay"
+        app:srcCompat="@mipmap/tour" />
+
+    <ImageButton
+        android:id="@+id/imgBtnVenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="170dp"
+        android:contentDescription="botonVenta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnTour"
+        app:srcCompat="@mipmap/venta" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

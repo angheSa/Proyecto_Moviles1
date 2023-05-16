@@ -12,6 +12,13 @@
         android:theme="@style/Theme.AtipaxApp"
         tools:targetApi="31">
         <activity
+            android:name=".SecondActivity"
+            android:exported="false"
+            android:label="@string/title_activity_second" />
+        <activity
+            android:name=".ui.SegundaActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
