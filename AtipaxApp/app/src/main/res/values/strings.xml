@@ -16,4 +16,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="btn_ingresar">Ingresar</string>
+
+    <!--  HOTEL  -->
+    <string name="nombreHotel"></string>
+    <string name="categoriaHotel"></string>
+
 </resources>

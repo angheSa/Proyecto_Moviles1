@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_manteHotelFragment_to_inicioFragment"
             app:destination="@id/inicioFragment" />
+        <action
+            android:id="@+id/action_manteHotelFragment_to_hotelAgregarFragment"
+            app:destination="@id/hotelAgregarFragment" />
     </fragment>
     <fragment
         android:id="@+id/manteVentaFragment"
@@ -73,4 +76,9 @@
             android:id="@+id/action_manteTourFragment_to_inicioFragment"
             app:destination="@id/inicioFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/hotelAgregarFragment"
+        android:name="com.aglafad.atipaxapp.ui.views.HotelAgregarFragment"
+        android:label="fragment_hotel_agregar"
+        tools:layout="@layout/fragment_hotel_agregar" />
 </navigation>
