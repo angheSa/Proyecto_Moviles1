@@ -53,4 +53,8 @@
         android:name="com.aglafad.atipaxapp.ui.views.ManteTourFragment"
         android:label="fragment_mante_tour"
         tools:layout="@layout/fragment_mante_tour" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.aglafad.atipaxapp.ui.views.LoginFragment"
+        android:label="LoginFragment" />
 </navigation>
