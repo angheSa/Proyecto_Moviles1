@@ -1,5 +1,6 @@
 package com.aglafad.atipaxapp.repository
 
+import androidx.room.Query
 import com.aglafad.atipaxapp.entity.Usuario
 import com.aglafad.atipaxapp.room.UsuarioDao
 import kotlinx.coroutines.flow.Flow

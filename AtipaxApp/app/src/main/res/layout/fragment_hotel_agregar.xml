@@ -24,7 +24,9 @@
             android:id="@+id/txtNombreEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/txt_nombre"/>
+        />
+        <!--Esto realmente va en la linea 27 pero no hay string txt_nombre-->
+        <!--android:hint="@string/txt_nombre"-->
     </com.google.android.material.textfield.TextInputLayout>
 
 

@@ -14,7 +14,8 @@ interface UsuarioDao {
 
     @Query("SELECT * FROM tb_usuario")
     fun getUsuarios(): Flow<List<Usuario>>
-
+    @Query("SELECT * FROM tb_usuario WHERE id_usuario = :usuario AND psw_usuario = :contraseña")
+    suspend fun getUsuarioLogin(usuario: String, contraseña: String): Usuario?
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(usuario: Usuario)
 
