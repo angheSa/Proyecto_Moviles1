@@ -29,13 +29,9 @@ class SegundaActivity : AppCompatActivity() {
 
         // Passing each menu ID as a set of Ids because each  bottom_navigation
         // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.inicioFragment
-            )
-        )
 
-        //appBarConfiguration = AppBarConfiguration(navController.graph)
+
+        appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
         bottomNavigation.setupWithNavController(navController)
 

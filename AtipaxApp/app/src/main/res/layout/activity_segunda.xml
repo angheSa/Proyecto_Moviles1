@@ -34,7 +34,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
 
-            app:navGraph="@navigation/nav_app" />
+            app:navGraph="@navigation/nav_app"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

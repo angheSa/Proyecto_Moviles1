@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnSiguiente.setOnClickListener {
+        binding.btnIngresar.setOnClickListener {
             val intent = Intent(this, SegundaActivity::class.java)
             startActivity(intent)
         }

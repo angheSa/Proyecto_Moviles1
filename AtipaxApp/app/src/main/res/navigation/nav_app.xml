@@ -32,29 +32,45 @@
         android:id="@+id/manteHotelFragment"
         android:name="com.aglafad.atipaxapp.ui.views.ManteHotelFragment"
         android:label="fragment_mante_hotel"
-        tools:layout="@layout/fragment_mante_hotel" />
+        tools:layout="@layout/fragment_mante_hotel" >
+        <action
+            android:id="@+id/action_manteHotelFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
     <fragment
         android:id="@+id/manteVentaFragment"
         android:name="com.aglafad.atipaxapp.ui.views.ManteVentaFragment"
         android:label="fragment_mante_venta"
-        tools:layout="@layout/fragment_mante_venta" />
+        tools:layout="@layout/fragment_mante_venta" >
+        <action
+            android:id="@+id/action_manteVentaFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
     <fragment
         android:id="@+id/consFullDaysFragment"
         android:name="com.aglafad.atipaxapp.ui.views.ConsFullDaysFragment"
         android:label="fragment_cons_full_days"
-        tools:layout="@layout/fragment_cons_full_days" />
+        tools:layout="@layout/fragment_cons_full_days" >
+        <action
+            android:id="@+id/action_consFullDaysFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
     <fragment
         android:id="@+id/consPaquetesFragment"
         android:name="com.aglafad.atipaxapp.ui.views.ConsPaquetesFragment"
         android:label="fragment_cons_paquetes"
-        tools:layout="@layout/fragment_cons_paquetes" />
+        tools:layout="@layout/fragment_cons_paquetes" >
+        <action
+            android:id="@+id/action_consPaquetesFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
     <fragment
         android:id="@+id/manteTourFragment"
         android:name="com.aglafad.atipaxapp.ui.views.ManteTourFragment"
         android:label="fragment_mante_tour"
-        tools:layout="@layout/fragment_mante_tour" />
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.aglafad.atipaxapp.ui.views.LoginFragment"
-        android:label="LoginFragment" />
+        tools:layout="@layout/fragment_mante_tour" >
+        <action
+            android:id="@+id/action_manteTourFragment_to_inicioFragment"
+            app:destination="@id/inicioFragment" />
+    </fragment>
 </navigation>
