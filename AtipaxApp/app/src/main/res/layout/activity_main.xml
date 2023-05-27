@@ -75,6 +75,7 @@
         android:layout_marginBottom="50dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:password="true"
         app:layout_constraintBottom_toTopOf="@+id/btn_ingresar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
