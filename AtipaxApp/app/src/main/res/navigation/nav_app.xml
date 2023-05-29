@@ -18,58 +18,14 @@
             android:id="@+id/action_inicioFragment_to_manteTourFragment"
             app:destination="@id/manteTourFragment" />
         <action
-            android:id="@+id/action_inicioFragment_to_manteVentaFragment"
-            app:destination="@id/manteVentaFragment" />
-        <action
-            android:id="@+id/action_inicioFragment_to_consPaquetesFragment"
-            app:destination="@id/consPaquetesFragment" />
-        <action
-            android:id="@+id/action_inicioFragment_to_consFullDaysFragment"
-            app:destination="@id/consFullDaysFragment" />
+                android:id="@+id/action_inicioFragment_to_manteProveedorFragment"
+                app:destination="@id/manteProveedorFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/manteHotelFragment"
-        android:name="com.aglafad.atipaxapp.ui.views.ManteHotelFragment"
-        android:label="fragment_mante_hotel"
-        tools:layout="@layout/fragment_mante_hotel" >
-        <action
-            android:id="@+id/action_manteHotelFragment_to_inicioFragment"
-            app:destination="@id/inicioFragment" />
-        <action
-            android:id="@+id/action_manteHotelFragment_to_hotelAgregarFragment"
-            app:destination="@id/hotelAgregarFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/manteVentaFragment"
-        android:name="com.aglafad.atipaxapp.ui.views.ManteVentaFragment"
-        android:label="fragment_mante_venta"
-        tools:layout="@layout/fragment_mante_venta" >
-        <action
-            android:id="@+id/action_manteVentaFragment_to_inicioFragment"
-            app:destination="@id/inicioFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/consFullDaysFragment"
-        android:name="com.aglafad.atipaxapp.ui.views.ConsFullDaysFragment"
-        android:label="fragment_cons_full_days"
-        tools:layout="@layout/fragment_cons_full_days" >
-        <action
-            android:id="@+id/action_consFullDaysFragment_to_inicioFragment"
-            app:destination="@id/inicioFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/consPaquetesFragment"
-        android:name="com.aglafad.atipaxapp.ui.views.ConsPaquetesFragment"
-        android:label="fragment_cons_paquetes"
-        tools:layout="@layout/fragment_cons_paquetes" >
-        <action
-            android:id="@+id/action_consPaquetesFragment_to_inicioFragment"
-            app:destination="@id/inicioFragment" />
-    </fragment>
+
     <fragment
         android:id="@+id/manteTourFragment"
-        android:name="com.aglafad.atipaxapp.ui.views.ManteTourFragment"
+        android:name="com.aglafad.atipaxapp.ui.views.tour.ManteTourFragment"
         android:label="fragment_mante_tour"
         tools:layout="@layout/fragment_mante_tour" >
         <action
@@ -77,8 +33,55 @@
             app:destination="@id/inicioFragment" />
     </fragment>
     <fragment
+            android:id="@+id/manteHotelFragment"
+            android:name="com.aglafad.atipaxapp.ui.views.hotel.ManteHotelFragment"
+            android:label="fragment_mante_hotel"
+            tools:layout="@layout/fragment_mante_hotel" >
+        <action
+                android:id="@+id/action_manteHotelFragment_to_inicioFragment"
+                app:destination="@id/inicioFragment" />
+        <action
+                android:id="@+id/action_manteHotelFragment_to_hotelAgregarFragment"
+                app:destination="@id/hotelAgregarFragment" />
+
+    </fragment>
+    <fragment
         android:id="@+id/hotelAgregarFragment"
-        android:name="com.aglafad.atipaxapp.ui.views.HotelAgregarFragment"
+        android:name="com.aglafad.atipaxapp.ui.views.hotel.HotelAgregarFragment"
         android:label="fragment_hotel_agregar"
-        tools:layout="@layout/fragment_hotel_agregar" />
+        tools:layout="@layout/fragment_hotel_agregar" >
+        <argument
+                android:name="hoteles"
+                app:argType="com.aglafad.atipaxapp.entity.Hotel"
+                app:nullable="true" />
+        <action
+                android:id="@+id/action_hotelAgregarFragment_to_manteHotelFragment"
+                app:destination="@id/manteHotelFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/manteProveedorFragment"
+            android:name="com.aglafad.atipaxapp.ui.views.proveedor.ManteProveedorFragment"
+            android:label="fragment_mante_proveedor"
+            tools:layout="@layout/fragment_mante_proveedor" >
+        <action
+                android:id="@+id/action_manteProveedorFragment_to_proveedorAgregarFragment"
+                app:destination="@id/proveedorAgregarFragment" />
+        <action
+                android:id="@+id/action_manteProveedorFragment_to_inicioFragment"
+                app:destination="@id/inicioFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/proveedorAgregarFragment"
+            android:name="com.aglafad.atipaxapp.ui.views.proveedor.ProveedorAgregarFragment"
+            android:label="fragment_proveedor_agregar"
+            tools:layout="@layout/fragment_proveedor_agregar" >
+        <argument
+                android:name="proveedor"
+                app:argType="com.aglafad.atipaxapp.entity.Proveedor"
+                app:nullable="true" />
+        <action
+                android:id="@+id/action_proveedorAgregarFragment_to_manteProveedorFragment"
+                app:destination="@id/manteProveedorFragment" />
+    </fragment>
+
 </navigation>

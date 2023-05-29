@@ -17,6 +17,6 @@ interface HotelDao {
     @Update
     suspend fun update(hotel: Hotel)
 
-    @Query("DELETE FROM tb_hotel where id = :id")
-    suspend fun delete(id: Int)
+    @Query("DELETE FROM tb_hotel where id_hotel = :id_hotel")
+    suspend fun delete(id_hotel: Int)
 }

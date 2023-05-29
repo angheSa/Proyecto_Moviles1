@@ -11,62 +11,64 @@
 
 
         <TextView
-                android:id="@+id/lbl_codigoHotel"
+                android:id="@+id/lbl_codigoProveedor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="@string/codigoHotel"
+                android:text="@string/codigoProveedor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.045"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/lbl_codigoH"
+                app:layout_constraintStart_toEndOf="@+id/lbl_codigoP"
                 android:layout_marginStart="10dp" />
 
         <TextView
-                android:id="@+id/lbl_destinoHotel"
+                android:id="@+id/lbl_nombreProveedor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="@string/destinoHotel"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_codigoHotel"
-                app:layout_constraintStart_toEndOf="@+id/lbl_destinoH"
-                android:layout_marginStart="13dp" />
+                android:text="@string/nombreProveedor"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_codigoProveedor"
+                app:layout_constraintStart_toEndOf="@+id/lbl_nombreP"
+                android:layout_marginStart="10dp" />
 
         <TextView
-                android:id="@+id/lbl_descripcionHotel"
+                android:id="@+id/lbl_direccionProveedor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="@string/descripcionHotel"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_destinoHotel"
-                app:layout_constraintStart_toEndOf="@+id/lbl_descripcionH"
+                android:text="@string/direccionProveedor"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_nombreProveedor"
+                app:layout_constraintStart_toEndOf="@+id/lbl_direccionP"
                 android:layout_marginStart="38dp" />
 
         <TextView
-                android:id="@+id/lbl_precioHotel"
+                android:id="@+id/lbl_correoProveedor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="@string/precioHotel"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_descripcionHotel"
-                app:layout_constraintStart_toEndOf="@+id/lbl_precioH"
+                android:text="@string/correoProveedor"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_direccionProveedor"
+                app:layout_constraintStart_toEndOf="@+id/lbl_correoP"
                 android:layout_marginStart="38dp" />
 
         <TextView
-                android:id="@+id/lbl_proveedorHotel"
+                android:id="@+id/lbl_telefonoProveedor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="@string/proveedorHotel"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_precioHotel"
-                app:layout_constraintStart_toEndOf="@+id/lbl_proveedorH"
+                android:text="@string/telefonoProveedor"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_correoProveedor"
+                app:layout_constraintStart_toEndOf="@+id/lbl_telefonoP"
                 android:layout_marginStart="38dp" />
 
+
+
         <TextView
-                android:id="@+id/lbl_codigoH"
+                android:id="@+id/lbl_codigoP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/codigoLabel"
+                android:text="@string/codigoLabelP"
 
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="6dp"
@@ -74,48 +76,45 @@
                 android:layout_marginStart="4dp" />
 
         <TextView
-                android:text="@string/destinoLabel"
+                android:text="@string/nombreLabelP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/lbl_destinoH"
+                android:id="@+id/lbl_nombreP"
 
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="5dp"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_codigoH" />
+                app:layout_constraintTop_toBottomOf="@+id/lbl_codigoP" />
 
         <TextView
-                android:text="@string/descripcionLabel"
+                android:text="@string/direccionLabelP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/lbl_descripcionH"
+                android:id="@+id/lbl_direccionP"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="5dp"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_destinoH" />
+                app:layout_constraintTop_toBottomOf="@+id/lbl_nombreP" />
 
         <TextView
-                android:text="@string/precioLabel"
+                android:text="@string/correoLabelP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/lbl_precioH"
+                android:id="@+id/lbl_correoP"
                 tools:layout_editor_absoluteY="80dp"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="4dp"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_descripcionH" />
-
+                app:layout_constraintTop_toBottomOf="@+id/lbl_direccionP" />
 
         <TextView
-                android:text="@string/proveedorLabel"
+                android:text="@string/telefonoLabelP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/lbl_proveedorH"
+                android:id="@+id/lbl_telefonoP"
                 tools:layout_editor_absoluteY="80dp"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="4dp"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_precioH" />
-
-
+                app:layout_constraintTop_toBottomOf="@+id/lbl_correoP" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

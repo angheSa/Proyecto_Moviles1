@@ -1,4 +1,4 @@
-package com.aglafad.atipaxapp.ui.views
+package com.aglafad.atipaxapp.ui.views.tour
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.aglafad.atipaxapp.R
 
 
-class ManteHotelFragment : Fragment() {
+class AgregarTourFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -16,7 +16,7 @@ class ManteHotelFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mante_hotel, container, false)
+        return inflater.inflate(R.layout.fragment_agregar_tour, container, false)
     }
 
 

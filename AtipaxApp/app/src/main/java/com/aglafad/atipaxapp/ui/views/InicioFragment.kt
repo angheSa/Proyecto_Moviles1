@@ -25,14 +25,11 @@ class InicioFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.imgBtnPaquete.setOnClickListener {
-            val accion = InicioFragmentDirections.actionInicioFragmentToConsPaquetesFragment()
-            findNavController().navigate(accion)
-        }
 
-        binding.imgBtnFullDay.setOnClickListener {
-            val accion = InicioFragmentDirections.actionInicioFragmentToConsFullDaysFragment()
+        binding.imgBtnProveedores.setOnClickListener {
+            val accion = InicioFragmentDirections.actionInicioFragmentToManteProveedorFragment()
             findNavController().navigate(accion)
+
         }
 
         binding.imgBtnHotel.setOnClickListener {
@@ -45,10 +42,7 @@ class InicioFragment : Fragment() {
             findNavController().navigate(accion)
         }
 
-        binding.imgBtnVenta.setOnClickListener {
-            val accion = InicioFragmentDirections.actionInicioFragmentToManteVentaFragment()
-            findNavController().navigate(accion)
-        }
+
     }
 
     override fun onDestroy() {

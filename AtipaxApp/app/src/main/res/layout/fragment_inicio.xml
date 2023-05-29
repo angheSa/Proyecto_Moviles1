@@ -33,7 +33,7 @@
         app:srcCompat="@mipmap/paquete" />
 
     <ImageButton
-        android:id="@+id/imgBtnFullDay"
+        android:id="@+id/imgBtnProveedores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="83dp"
@@ -65,17 +65,6 @@
         app:layout_constraintTop_toBottomOf="@+id/imgBtnFullDay"
         app:srcCompat="@mipmap/tour" />
 
-    <ImageButton
-        android:id="@+id/imgBtnVenta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="170dp"
-        android:contentDescription="botonVenta"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgBtnTour"
-        app:srcCompat="@mipmap/venta" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

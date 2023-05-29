@@ -7,16 +7,15 @@ import com.aglafad.atipaxapp.repository.ProveedorRepository
 import com.aglafad.atipaxapp.repository.TourRepository
 import com.aglafad.atipaxapp.repository.UsuarioRepository
 
-class ViewModelFactory (private val repository: UsuarioRepository) : ViewModelProvider.Factory{
+class TourViewModelFactory ( val repositoryTour: TourRepository) : ViewModelProvider.Factory{
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
 
-        if (modelClass.isAssignableFrom(UsuarioViewModel::class.java)){
-            return UsuarioViewModel(repository) as T
+        if (modelClass.isAssignableFrom(TourViewModel::class.java)){
+            return TourViewModel(repositoryTour) as T
         }
 
 
-
         return super.create(modelClass)
-    }
+        }
 }

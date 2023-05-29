@@ -17,8 +17,82 @@
     <string name="title_notifications">Notifications</string>
     <string name="btn_ingresar">Ingresar</string>
 
-    <!--  HOTEL  -->
-    <string name="nombreHotel"></string>
-    <string name="categoriaHotel"></string>
 
+    <!-- ITEM PROVEEDOR  -->
+    <!-- label sin datos  -->
+    <string name="codigoLabelP">Nombre:</string>
+    <string name="nombreLabelP">Categoria:</string>
+    <string name="direccionLabelP">Precio:</string>
+    <string name="correoLabelP">Código:</string>
+    <string name="telefonoLabelP">Telefono:</string>
+    <!-- label con datos  -->
+    <string name="codigoProveedor"></string>
+    <string name="nombreProveedor"></string>
+    <string name="direccionProveedor"></string>
+    <string name="correoProveedor"></string>
+    <string name="telefonoProveedor"></string>
+    <!-- button eliminar y actualizar proveedor-->
+    <string name="btn_eliminar_p">Eliminar</string>
+    <string name="btn_actualizar_p">"Actualizar</string>
+
+    <!-- FRAGMENT PROVEEDOR  -->
+
+    <string name="tituloProveedor">Proveedores</string>
+    <string name="btn_agregar_p"></string>
+
+
+    <!-- FRAGMENT AGREGAR HOTEL  -->
+    <string name="txt_codigoP">Codigo</string>
+    <string name="txt_nombreP">Nombre</string>
+    <string name="txt_direccionP">Direccion</string>
+    <string name="txt_correoP">Correo</string>
+    <string name="txt_telefonoP">Telefono</string>
+    <string name="btn_agregar_proveedor">Agregar</string>
+    <!-- MENSAJE ALERTA PROVEEDOR  -->
+
+    <string name="alerta_p">Alerta</string>
+    <string name="mensaje_actualizacion_p"> Se actualizó la información del proveedor</string>
+    <string name="mensaje_eliminar_p">Se eliminó correctamente el proveedor</string>
+    <string name="mensaje_guardar_p">Se agregó correctamente el proveedor</string>
+
+    <string name="aceptar_p">Aceptar</string>
+
+    <!-- ITEM HOTEL  -->
+    <!-- label sin datos  -->
+    <string name="destinoLabel">Destino:</string>
+    <string name="descripcionLabel">Descripcion:</string>
+    <string name="precioLabel">Precio:</string>
+    <string name="codigoLabel">Código:</string>
+    <string name="proveedorLabel">Proveedor:</string>
+    <!-- label con datos  -->
+    <string name="destinoHotel"></string>
+    <string name="descripcionHotel"></string>
+    <string name="precioHotel"></string>
+    <string name="codigoHotel"></string>
+    <string name="proveedorHotel"></string>
+    <!-- button eliminar y actualizar -->
+    <string name="btn_eliminar_h">Eliminar</string>
+    <string name="btn_actualizar_h">Actualizar</string>
+
+
+    <!-- FRAGMENT HOTEL  -->
+
+    <string name="tituloHotel">Hoteles</string>
+    <string name="btn_agregar_h"></string>
+
+
+    <!-- FRAGMENT AGREGAR HOTEL  -->
+    <string name="txt_codigo">Codigo</string>
+    <string name="txt_destino">Destino</string>
+    <string name="txt_precio">Precio</string>
+    <string name="txt_descripcion">Descripcion</string>
+    <string name="txt_proveedor">Proveedor</string>
+    <string name="btn_agregar_hotel">Agregar</string>
+
+    <string name="alerta">Alerta</string>
+    <string name="mensaje_actualizacion"> Se actualizó la información del hotel</string>
+    <string name="mensaje_eliminar">Se eliminó correctamente el hotel</string>
+    <string name="mensaje_guardar">Se agregó correctamente el hotel</string>
+
+    <string name="aceptar">Aceptar</string>
 </resources>

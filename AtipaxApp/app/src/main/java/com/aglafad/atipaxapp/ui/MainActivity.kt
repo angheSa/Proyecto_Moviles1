@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -51,10 +52,10 @@ class MainActivity : AppCompatActivity() {
             val rojo = ContextCompat.getColor(this@MainActivity, R.color.m3_ref_palette_error40)
             val blanco = ContextCompat.getColor(this@MainActivity, R.color.m3_ref_palette_white)
 
-            /*val nuevoUsu = Usuario(7, "1234")
+            val nuevoUsu = Usuario(7, "1234")
             lifecycleScope.launch {
                 usuarioDao.insert(nuevoUsu)
-            }*/
+            }
 
             GlobalScope.launch(Dispatchers.Main) {
                 val user = withContext(Dispatchers.IO) {
@@ -77,6 +78,7 @@ class MainActivity : AppCompatActivity() {
                         binding.txtPsw.setHint("Ingrese contraseña")
                         binding.txtPsw.setHintTextColor(rojo)
                         binding.lblPsw.setTextColor(rojo)
+
                     }
                 }
                 //Recorrido para ver los usuarios en la tabla

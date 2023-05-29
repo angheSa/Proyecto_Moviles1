@@ -5,22 +5,23 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.aglafad.atipaxapp.entity.Hotel
-import com.aglafad.atipaxapp.entity.Usuario
+import com.aglafad.atipaxapp.entity.Tour
 import com.aglafad.atipaxapp.repository.HotelRepository
+import com.aglafad.atipaxapp.repository.TourRepository
 import kotlinx.coroutines.launch
 
-class HotelViewModel(private val repository: HotelRepository) : ViewModel() {
+class TourViewModel (private val repository: TourRepository) : ViewModel() {
 
-    val hotels: LiveData<List<Hotel>> = repository.listaHoteles.asLiveData()
+    val tours: LiveData<List<Tour>> = repository.listaTours.asLiveData()
 
-    fun insertar(hotel: Hotel){
+    fun insertar(tour: Tour){
         viewModelScope.launch {
-            repository.guardar(hotel)
+            repository.guardar(tour)
         }
     }
-    fun actualizar(hotel: Hotel){
+    fun actualizar(tour: Tour){
         viewModelScope.launch {
-            repository.actualizar(hotel)
+            repository.actualizar(tour)
         }
     }
     fun eliminar(id: Int){
