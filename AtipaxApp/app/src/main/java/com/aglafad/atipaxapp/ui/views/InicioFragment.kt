@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.aglafad.atipaxapp.R
 import com.aglafad.atipaxapp.databinding.FragmentInicioBinding
@@ -18,8 +19,24 @@ class InicioFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View  {
-        _binding = FragmentInicioBinding.inflate(inflater, container, false)
-        return binding.root
+      //_binding = FragmentInicioBinding.inflate(inflater, container, false)
+
+       // return binding.root
+
+
+          /* val inicioViewModel =
+                ViewModelProvider(this).get(InicioViewModel::class.java)*/
+
+            _binding = FragmentInicioBinding.inflate(inflater, container, false)
+            val root: View = binding.root
+
+          /*  val textView: TextView = binding.textDashboard
+            dashboardViewModel.text.observe(viewLifecycleOwner) {
+                textView.text = it
+            }*/
+            return root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,10 +60,12 @@ class InicioFragment : Fragment() {
         }
 
 
+
+
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         _binding = null
     }
 

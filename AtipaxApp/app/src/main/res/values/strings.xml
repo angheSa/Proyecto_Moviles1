@@ -16,14 +16,15 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="btn_ingresar">Ingresar</string>
-
+    <!-- GENERALES  -->
+    <string name="btnVolver">Volver</string>
 
     <!-- ITEM PROVEEDOR  -->
     <!-- label sin datos  -->
-    <string name="codigoLabelP">Nombre:</string>
-    <string name="nombreLabelP">Categoria:</string>
-    <string name="direccionLabelP">Precio:</string>
-    <string name="correoLabelP">Código:</string>
+
+    <string name="nombreLabelP">Nombre:</string>
+    <string name="direccionLabelP">Direccion:</string>
+    <string name="correoLabelP">Correo:</string>
     <string name="telefonoLabelP">Telefono:</string>
     <!-- label con datos  -->
     <string name="codigoProveedor"></string>
@@ -41,7 +42,7 @@
     <string name="btn_agregar_p"></string>
 
 
-    <!-- FRAGMENT AGREGAR HOTEL  -->
+    <!-- FRAGMENT AGREGAR PROVEEDOR  -->
     <string name="txt_codigoP">Codigo</string>
     <string name="txt_nombreP">Nombre</string>
     <string name="txt_direccionP">Direccion</string>
@@ -50,7 +51,7 @@
     <string name="btn_agregar_proveedor">Agregar</string>
     <!-- MENSAJE ALERTA PROVEEDOR  -->
 
-    <string name="alerta_p">Alerta</string>
+    <string name="alerta_p">Mensaje</string>
     <string name="mensaje_actualizacion_p"> Se actualizó la información del proveedor</string>
     <string name="mensaje_eliminar_p">Se eliminó correctamente el proveedor</string>
     <string name="mensaje_guardar_p">Se agregó correctamente el proveedor</string>
@@ -89,10 +90,14 @@
     <string name="txt_proveedor">Proveedor</string>
     <string name="btn_agregar_hotel">Agregar</string>
 
-    <string name="alerta">Alerta</string>
+    <string name="alerta">Mensaje</string>
     <string name="mensaje_actualizacion"> Se actualizó la información del hotel</string>
     <string name="mensaje_eliminar">Se eliminó correctamente el hotel</string>
     <string name="mensaje_guardar">Se agregó correctamente el hotel</string>
 
     <string name="aceptar">Aceptar</string>
+    <string name="title_activity_main2">MainActivity2</string>
+
+    <string name="coP">Cod</string>
+    <string name="namP">Nombre</string>
 </resources>

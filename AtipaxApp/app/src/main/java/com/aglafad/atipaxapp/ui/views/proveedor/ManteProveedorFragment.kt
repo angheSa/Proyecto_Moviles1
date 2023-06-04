@@ -42,15 +42,15 @@ class ManteProveedorFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-         proveedorAdapt = ProveedorAdapter(
-           /* onclickDelete = { proveedorEliminado ->
-                proveedorAdapt.eliminarProveedor(proveedorEliminado) // Actualizar la lista en el adaptador
-                MaterialAlertDialogBuilder(requireContext())
-                    .setTitle(resources.getString(R.string.alerta_p))
-                    .setMessage(resources.getString(R.string.mensaje_eliminar_p))
-                    .setPositiveButton(resources.getString(R.string.aceptar_p), null)
-                    .show()
-            },*/
+        proveedorAdapt = ProveedorAdapter(
+            /* onclickDelete = { proveedorEliminado ->
+                 proveedorAdapt.eliminarProveedor(proveedorEliminado) // Actualizar la lista en el adaptador
+                 MaterialAlertDialogBuilder(requireContext())
+                     .setTitle(resources.getString(R.string.alerta_p))
+                     .setMessage(resources.getString(R.string.mensaje_eliminar_p))
+                     .setPositiveButton(resources.getString(R.string.aceptar_p), null)
+                     .show()
+             },*/
             onclick = { proveedorSeleccionado ->
                 val accion =
                     ManteProveedorFragmentDirections.actionManteProveedorFragmentToProveedorAgregarFragment(proveedorSeleccionado)
@@ -65,9 +65,13 @@ class ManteProveedorFragment : Fragment() {
         }
 
         binding.btnAgregarProveedor.setOnClickListener {
-            val directions =
+            val accion =
                 ManteProveedorFragmentDirections.actionManteProveedorFragmentToProveedorAgregarFragment(null)
-            findNavController().navigate(directions)
+            findNavController().navigate(accion)
+        }
+        binding.btnVolverInicio.setOnClickListener {
+            val accion = ManteProveedorFragmentDirections.actionManteProveedorFragmentToInicioFragment()
+            findNavController().navigate(accion)
         }
     }
 
@@ -75,5 +79,6 @@ class ManteProveedorFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
+
 
 }

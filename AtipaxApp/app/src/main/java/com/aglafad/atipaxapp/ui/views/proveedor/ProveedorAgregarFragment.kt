@@ -1,5 +1,6 @@
 package com.aglafad.atipaxapp.ui.views.proveedor
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -37,6 +38,7 @@ class ProveedorAgregarFragment : Fragment() {
         return binding.root
 
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -50,13 +52,13 @@ class ProveedorAgregarFragment : Fragment() {
           } else {
 
 
-              val co = proveSelecc?.id_provee.toString()
+            //  val co = proveSelecc?.id_provee.toString()
               val nom = proveSelecc?.nombre.toString()
               val di = proveSelecc?.direc.toString()
               val corr = proveSelecc?.correo.toString()
               val telef = proveSelecc?.telefono.toString()
 
-              binding.txtCodigoEdit.setText(co)
+             // binding.txtCodigoEdit.setText(co)
               binding.txtNombreEdit.setText(nom)
               binding.txtDireccionEdit.setText(di)
               binding.txtCorreoEdit.setText(corr)
@@ -69,15 +71,17 @@ class ProveedorAgregarFragment : Fragment() {
           }
 
         binding.btnAdd.setOnClickListener {
-            val codig = binding.txtCodigo.editText?.text.toString()
+
             val nombr = binding.txtNombre.editText?.text.toString()
             val direc = binding.txtDireccion.editText?.text.toString()
             val corr = binding.txtCorreo.editText?.text.toString()
             val tef = binding.txtTelefono.editText?.text.toString()
 
+
             // pasamos al objeto los valores
-            val objProveedor = Proveedor(codig.toInt(),nombr,direc,corr,tef.toInt())
-            proViewModel.insertar(objProveedor)
+                val objProveedor = Proveedor(0,nombr,direc,corr,tef.toInt())
+                proViewModel.insertar(objProveedor)
+
 
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(resources.getString(R.string.alerta_p))
@@ -91,15 +95,21 @@ class ProveedorAgregarFragment : Fragment() {
 
         binding.btnUpdate.setOnClickListener{
         //Declaramos los datos a actualizar
-            val codig = binding.txtCodigo.editText?.text.toString()
+
             val nombr = binding.txtNombre.editText?.text.toString()
             val direc = binding.txtDireccion.editText?.text.toString()
             val corr = binding.txtCorreo.editText?.text.toString()
             val tef = binding.txtTelefono.editText?.text.toString()
+            val co = proveSelecc?.id_provee
+            if (co != null) {
+                val objProveedor = Proveedor(co,nombr,direc,corr,tef.toInt())
+                proViewModel.actualizar(objProveedor)
+
+            }
+                // pasamos al objeto los valores
 
             // pasamos al objeto los valores
-            val objProveedor = Proveedor(codig.toInt(),nombr,direc,corr,tef.toInt())
-            proViewModel.actualizar(objProveedor)
+
 
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(resources.getString(R.string.alerta))
@@ -129,7 +139,10 @@ class ProveedorAgregarFragment : Fragment() {
                 .show()
         }
 
-
+    binding.btnVovler.setOnClickListener {
+        val action = ProveedorAgregarFragmentDirections.actionProveedorAgregarFragmentToManteProveedorFragment()
+        findNavController().navigate(action)
+    }
 
     }
 

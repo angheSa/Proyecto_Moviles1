@@ -10,7 +10,7 @@
             android:id="@+id/lbl_titulo_p"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:text="@string/tituloProveedor"
             android:textSize="17dp"
 
@@ -18,14 +18,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="30dp" />
+
     <ImageButton
             android:src="@drawable/ic_agregar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_agregar_proveedor"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="7dp"
-            android:layout_marginStart="140dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="70dp"
             app:layout_constraintStart_toEndOf="@+id/lbl_titulo_p" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -39,9 +40,20 @@
             android:layout_marginTop="20dp"
             android:text="@string/btn_agregar_h"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="40dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="40dp"
             app:layout_constraintBottom_toBottomOf="parent" />
+
+    <Button
+            android:text="@string/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_volver_inicio"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@+id/btn_agregar_proveedor"
+            android:layout_marginStart="5dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,4 +29,10 @@ class ProveedorViewModel (private val repository: ProveedorRepository) : ViewMod
             repository.eliminar(id)
         }
     }
+
+   /* fun buscarPorNombre(nombre: String){
+        viewModelScope.launch {
+            repository.buscarPorNombre(nombre)
+        }
+    }*/
 }

@@ -19,4 +19,8 @@ class ProveedorRepository(private val proveedorDao : ProveedorDao) {
         proveedorDao.delete(id)
     }
 
+   /* suspend fun buscarPorNombre(nombre: String){
+        proveedorDao.searchForName(nombre)
+    }*/
+
 }

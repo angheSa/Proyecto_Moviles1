@@ -18,4 +18,7 @@ interface ProveedorDao {
 
     @Query("DELETE FROM tb_proveedor where id_provee = :id")
     suspend fun delete(id: Int)
+
+   /* @Query("SELECT * FROM tb_proveedor where  nom_proveedor = :nombre")
+    suspend fun searchForName(nombre : String): Flow<List<Proveedor>>*/
 }

@@ -8,7 +8,7 @@ class ProveedorViewHolder (private val binding: ItemProveedorBinding) : ViewHold
 
     fun pro(proveedor: Proveedor) {
 
-         binding.lblCodigoProveedor.text = proveedor.id_provee.toString()
+        // binding.lblCodigoProveedor.text = proveedor.id_provee.toString()
          binding.lblNombreProveedor.text = proveedor.nombre.toString()
         binding.lblDireccionProveedor.text = proveedor.direc.toString()
         binding.lblCorreoProveedor.text = proveedor.correo.toString()

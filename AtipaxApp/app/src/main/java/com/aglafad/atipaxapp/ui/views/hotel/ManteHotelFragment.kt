@@ -14,7 +14,6 @@ import com.aglafad.atipaxapp.databinding.FragmentManteHotelBinding
 
 import com.aglafad.atipaxapp.ui.adapter.HotelAdapter
 import com.aglafad.atipaxapp.ui.viewmodel.*
-import com.aglafad.atipaxapp.ui.views.proveedor.ManteProveedorFragmentDirections
 
 
 
@@ -63,7 +62,7 @@ class ManteHotelFragment : Fragment() {
         }
 
         binding.btnAgregarHotel.setOnClickListener {
-            val accion = ManteProveedorFragmentDirections.actionManteProveedorFragmentToProveedorAgregarFragment(null)
+            val accion = ManteHotelFragmentDirections.actionManteHotelFragmentToHotelAgregarFragment(null)
                 findNavController().navigate(accion)
         }
     }

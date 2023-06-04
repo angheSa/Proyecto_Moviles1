@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.aglafad.atipaxapp.databinding.ItemProveedorBinding
 import com.aglafad.atipaxapp.entity.Proveedor
+import java.util.*
 
 
 class ProveedorAdapter(val onclick : (Proveedor) -> Unit) : Adapter<ProveedorViewHolder>() {
@@ -15,6 +16,23 @@ class ProveedorAdapter(val onclick : (Proveedor) -> Unit) : Adapter<ProveedorVie
         listas.addAll(lista)
         notifyDataSetChanged()
     }
+
+  /*  fun filtroProveedor(query: String) {
+        filtroList.clear()
+        if (query.isEmpty()) {
+            filtroList.addAll(listas)
+        } else {
+            val filterPattern = query.trim().toLowerCase(Locale.getDefault())
+            for (proveedor in listas) {
+                proveedor.nombre?.let {
+                    if (it.toLowerCase(Locale.getDefault()).contains(filterPattern)) {
+                        filtroList.add(proveedor)
+                    }
+                }
+            }
+        }
+        notifyDataSetChanged()
+    }*/
     /*fun setOnClickDelete(callback: (Proveedor) -> Unit){
         this.onclickDelete = callback
         notifyDataSetChanged()
@@ -35,6 +53,7 @@ class ProveedorAdapter(val onclick : (Proveedor) -> Unit) : Adapter<ProveedorVie
 
     override fun getItemCount(): Int { // espera retornar un valor entero
         return listas.size
+
     }
 
     override fun onBindViewHolder(holder: ProveedorViewHolder, position: Int) {
