@@ -46,9 +46,10 @@ class ProveedorAgregarFragment : Fragment() {
 
           if (proveSelecc == null){
 
-              binding.btnAdd.visibility = View.VISIBLE
-              binding.btnUpdate.visibility = View.GONE
-              binding.btnDelete.visibility = View.GONE
+              binding.btnAgregar.visibility = View.VISIBLE
+              binding.btnEditar.visibility = View.GONE
+              binding.btnEliminar.visibility = View.GONE
+              binding.btnVolverMante.visibility = View.VISIBLE
           } else {
 
 
@@ -64,36 +65,39 @@ class ProveedorAgregarFragment : Fragment() {
               binding.txtCorreoEdit.setText(corr)
               binding.txtTelefonoEdit.setText(telef)
 
-              binding.btnAdd.visibility = View.GONE
-              binding.btnUpdate.visibility = View.VISIBLE
-              binding.btnDelete.visibility = View.VISIBLE
-
+              binding.btnAgregar.visibility = View.GONE
+              binding.btnEditar.visibility = View.VISIBLE
+              binding.btnEliminar.visibility = View.VISIBLE
+              binding.btnVolverMante.visibility = View.VISIBLE
           }
 
-        binding.btnAdd.setOnClickListener {
+        binding.btnAgregar.setOnClickListener {
 
             val nombr = binding.txtNombre.editText?.text.toString()
             val direc = binding.txtDireccion.editText?.text.toString()
             val corr = binding.txtCorreo.editText?.text.toString()
             val tef = binding.txtTelefono.editText?.text.toString()
 
-
+            val objProveedor = Proveedor(0,nombr,direc,corr,tef.toInt())
             // pasamos al objeto los valores
-                val objProveedor = Proveedor(0,nombr,direc,corr,tef.toInt())
-                proViewModel.insertar(objProveedor)
-
-
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(resources.getString(R.string.alerta_p))
                 .setMessage(resources.getString(R.string.mensaje_guardar_p))
+                .setNegativeButton("Cancelar", null)
                 .setPositiveButton(resources.getString(R.string.aceptar_p)) { _, _ ->
+                    proViewModel.insertar(objProveedor)
                     val action = ProveedorAgregarFragmentDirections.actionProveedorAgregarFragmentToManteProveedorFragment()
                     findNavController().navigate(action)
                 }
                 .show()
+
+
+
+
+
         }
 
-        binding.btnUpdate.setOnClickListener{
+        binding.btnEditar.setOnClickListener{
         //Declaramos los datos a actualizar
 
             val nombr = binding.txtNombre.editText?.text.toString()
@@ -103,43 +107,44 @@ class ProveedorAgregarFragment : Fragment() {
             val co = proveSelecc?.id_provee
             if (co != null) {
                 val objProveedor = Proveedor(co,nombr,direc,corr,tef.toInt())
-                proViewModel.actualizar(objProveedor)
+
+                MaterialAlertDialogBuilder(requireContext())
+                    .setTitle(resources.getString(R.string.alerta))
+                    .setMessage("¿Quiere actualizar el proveedor $nombr?")
+                    .setNegativeButton("Cancelar", null)
+                    .setPositiveButton(resources.getString(R.string.aceptar_p)){ _, _ ->
+                        proViewModel.actualizar(objProveedor)
+                        val action = ProveedorAgregarFragmentDirections.actionProveedorAgregarFragmentToManteProveedorFragment()
+                        findNavController().navigate(action)
+
+                    }
+                    .show()
 
             }
-                // pasamos al objeto los valores
 
-            // pasamos al objeto los valores
-
-
-        MaterialAlertDialogBuilder(requireContext())
-            .setTitle(resources.getString(R.string.alerta))
-            .setMessage(resources.getString(R.string.mensaje_actualizacion_p))
-            .setPositiveButton(resources.getString(R.string.aceptar_p)){ _, _ ->
-                val action = ProveedorAgregarFragmentDirections.actionProveedorAgregarFragmentToManteProveedorFragment()
-                findNavController().navigate(action)
-
-            }
-            .show()
 
     }
 
-        binding.btnDelete.setOnClickListener {
+        binding.btnEliminar.setOnClickListener {
             val co = proveSelecc?.id_provee
             if (co != null) {
-                proViewModel.eliminar(co)
+                MaterialAlertDialogBuilder(requireContext())
+                    .setTitle(resources.getString(R.string.alerta_p))
+                    .setMessage(resources.getString(R.string.mensaje_eliminar_p))
+                    .setNegativeButton("Cancelar", null)
+                    .setPositiveButton(resources.getString(R.string.aceptar_p)){ _, _ ->
+                        proViewModel.eliminar(co)
+                        val action = ProveedorAgregarFragmentDirections.actionProveedorAgregarFragmentToManteProveedorFragment()
+                        findNavController().navigate(action)
+                    }
+                    .show()
+
             }
 
-            MaterialAlertDialogBuilder(requireContext())
-                .setTitle(resources.getString(R.string.alerta_p))
-                .setMessage(resources.getString(R.string.mensaje_eliminar_p))
-                .setPositiveButton(resources.getString(R.string.aceptar_p)){ _, _ ->
-                    val action = ProveedorAgregarFragmentDirections.actionProveedorAgregarFragmentToManteProveedorFragment()
-                    findNavController().navigate(action)
-                }
-                .show()
+
         }
 
-    binding.btnVovler.setOnClickListener {
+    binding.btnVolverMante.setOnClickListener {
         val action = ProveedorAgregarFragmentDirections.actionProveedorAgregarFragmentToManteProveedorFragment()
         findNavController().navigate(action)
     }

@@ -1,14 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.views.tour.AgregarTourFragment">
+        tools:context=".ui.views.tour.AgregarTourFragment"
+        android:orientation="vertical"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="9dp"
+        android:layout_marginTop="5dp"
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp">
+
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:orientation="vertical">
 
-</FrameLayout>
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtDestino"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintVertical_bias="0.119"
+                tools:layout_editor_absoluteX="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtDestinoEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_destinoT" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtTipo"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDestino"
+                app:layout_constraintVertical_bias="0.119"
+                tools:layout_editor_absoluteX="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtTipoEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_tipoT" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTipo"
+                app:layout_constraintVertical_bias="0.119"
+                tools:layout_editor_absoluteX="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtDescripcionEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_descripcionT" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtPrecio"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDescripcion"
+                app:layout_constraintVertical_bias="0.119"
+                tools:layout_editor_absoluteX="0dp"
+                android:inputType="number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtPrecioEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_precioT" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtProveedor"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                app:layout_constraintTop_toBottomOf="@+id/txtPrecio"
+                app:layout_constraintVertical_bias="0.119"
+                tools:layout_editor_absoluteX="0dp">
+
+            <AutoCompleteTextView
+                    android:id="@+id/autoComProveedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_proveedorT"
+                    android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp">
+            <ImageButton
+                    android:text="@string/btnVolver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btn_volver_mante"
+                    android:src="@drawable/ic_back"
+                    android:layout_marginLeft="42dp"
+                    android:background="#FFFFFF" />
+
+            <ImageButton
+                    android:text="@string/btnVolver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btn_agregar"
+                    android:src="@drawable/ic_agregar2"
+                    android:layout_marginLeft="105dp"
+                    android:background="#FFFFFF" />
+
+            <ImageButton
+                    android:text="@string/btnVolver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btn_editar"
+                    android:src="@drawable/ic_update"
+                    android:layout_marginLeft="100dp"
+                    android:background="#FFFFFF" />
+
+            <ImageButton
+                    android:text="@string/btnVolver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btn_eliminar"
+                    android:src="@drawable/ic_delete"
+
+                    android:background="#FFFFFF" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

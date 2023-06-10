@@ -3,6 +3,7 @@ package com.aglafad.atipaxapp.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation.findNavController
@@ -43,6 +44,11 @@ class SegundaActivity : AppCompatActivity() {
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+      //  supportActionBar.displayOptions(Action)
+        getSupportActionBar()?.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM)
+        getSupportActionBar()?.setCustomView(R.layout.app_bar)
+
 
         }
 

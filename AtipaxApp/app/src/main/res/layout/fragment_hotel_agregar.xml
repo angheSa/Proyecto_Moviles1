@@ -1,25 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.views.hotel.HotelAgregarFragment">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.views.hotel.HotelAgregarFragment"
+        android:orientation="vertical"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="9dp"
+        android:layout_marginTop="5dp"
 
+
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
     <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtDestino"
             android:layout_width="match_parent"
             android:layout_height="61dp"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="90dp"
-
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCodigo"
-            app:layout_constraintVertical_bias="0.119">
+
+            app:layout_constraintVertical_bias="0.119"
+            tools:layout_editor_absoluteX="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtDestinoEdit"
@@ -32,9 +43,9 @@
             android:id="@+id/txtDescripcion"
             android:layout_width="match_parent"
             android:layout_height="61dp"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="90dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtDestino"
             app:layout_constraintVertical_bias="0.119"
@@ -51,9 +62,9 @@
             android:id="@+id/txtPrecio"
             android:layout_width="match_parent"
             android:layout_height="61dp"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="90dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtDescripcion"
             app:layout_constraintVertical_bias="0.119"
@@ -71,9 +82,9 @@
             android:id="@+id/txtProveedor"
             android:layout_width="match_parent"
             android:layout_height="61dp"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="90dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             app:layout_constraintTop_toBottomOf="@+id/txtPrecio"
@@ -88,40 +99,49 @@
                 android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
-    <Button
-            android:id="@+id/btn_add"
+    <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+        <ImageButton
+                android:text="@string/btnVolver"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_volver_mante"
+                android:src="@drawable/ic_back"
+                android:layout_marginLeft="42dp"
+                android:background="#FFFFFF" />
 
-            android:text="@string/btn_agregar_hotel"
-            app:layout_constraintStart_toStartOf="parent"
+        <ImageButton
+                android:text="@string/btnVolver"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_agregar"
+                android:src="@drawable/ic_agregar2"
+                android:layout_marginLeft="105dp"
+                android:background="#FFFFFF" />
 
-            app:layout_constraintTop_toBottomOf="@+id/txtProveedor"
-            android:layout_marginTop="32dp" />
+        <ImageButton
+                android:text="@string/btnVolver"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_editar"
+                android:src="@drawable/ic_update"
+                android:layout_marginLeft="100dp"
+                android:background="#FFFFFF" />
 
-    <Button
-            android:id="@+id/btn_update"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="168dp"
-            app:layout_constraintStart_toStartOf="parent"
+        <ImageButton
+                android:text="@string/btnVolver"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btn_eliminar"
+                android:src="@drawable/ic_delete"
 
-            android:layout_marginTop="32dp"
-            android:text="@string/btn_actualizar_h"
-            app:layout_constraintTop_toBottomOf="@+id/txtProveedor" />
+                android:background="#FFFFFF" />
 
-    <Button
-            android:id="@+id/btn_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="292dp"
-            android:layout_marginTop="32dp"
-            android:text="@string/btn_eliminar_h"
-            app:layout_constraintStart_toStartOf="parent"
+    </LinearLayout>
 
-            app:layout_constraintTop_toBottomOf="@+id/txtProveedor" />
+    </LinearLayout>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -22,10 +22,10 @@
     <!-- ITEM PROVEEDOR  -->
     <!-- label sin datos  -->
 
-    <string name="nombreLabelP">Nombre:</string>
-    <string name="direccionLabelP">Direccion:</string>
-    <string name="correoLabelP">Correo:</string>
-    <string name="telefonoLabelP">Telefono:</string>
+    <string name="nombreLabelP">Nombre</string>
+    <string name="direccionLabelP">Direccion</string>
+    <string name="correoLabelP">Correo</string>
+    <string name="telefonoLabelP">Telefono</string>
     <!-- label con datos  -->
     <string name="codigoProveedor"></string>
     <string name="nombreProveedor"></string>
@@ -38,7 +38,7 @@
 
     <!-- FRAGMENT PROVEEDOR  -->
 
-    <string name="tituloProveedor">Proveedores</string>
+    <string name="tituloProveedor">PROVEEDORES</string>
     <string name="btn_agregar_p"></string>
 
 
@@ -53,18 +53,17 @@
 
     <string name="alerta_p">Mensaje</string>
     <string name="mensaje_actualizacion_p"> Se actualizó la información del proveedor</string>
-    <string name="mensaje_eliminar_p">Se eliminó correctamente el proveedor</string>
+    <string name="mensaje_eliminar_p">¿Desea eliminar el proveedor?</string>
     <string name="mensaje_guardar_p">Se agregó correctamente el proveedor</string>
 
     <string name="aceptar_p">Aceptar</string>
 
     <!-- ITEM HOTEL  -->
     <!-- label sin datos  -->
-    <string name="destinoLabel">Destino:</string>
-    <string name="descripcionLabel">Descripcion:</string>
-    <string name="precioLabel">Precio:</string>
-    <string name="codigoLabel">Código:</string>
-    <string name="proveedorLabel">Proveedor:</string>
+    <string name="destinoLabel">Destino</string>
+    <string name="descripcionLabel">Descripcion</string>
+    <string name="precioLabel">Precio</string>
+    <string name="proveedorLabel">Proveedor</string>
     <!-- label con datos  -->
     <string name="destinoHotel"></string>
     <string name="descripcionHotel"></string>
@@ -78,7 +77,7 @@
 
     <!-- FRAGMENT HOTEL  -->
 
-    <string name="tituloHotel">Hoteles</string>
+    <string name="tituloHotel">HOTELES</string>
     <string name="btn_agregar_h"></string>
 
 
@@ -100,4 +99,39 @@
 
     <string name="coP">Cod</string>
     <string name="namP">Nombre</string>
+
+
+    <!-- ITEM TOUR  -->
+    <!-- label sin datos  -->
+    <string name="destinoTLabel">Destino</string>
+    <string name="tipoTLabel">Tipo</string>
+    <string name="descripcionTLabel">Descripcion</string>
+    <string name="precioTLabel">Precio</string>
+    <string name="proveedorTLabel">Proveedor</string>
+    <!-- label con datos  -->
+    <string name="destinoTour"></string>
+    <string name="descripcionTour"></string>
+    <string name="precioTour"></string>
+    <string name="tipoTour"></string>
+    <string name="proveedorTour"></string>
+
+
+    <!-- FRAGMENT AGREGAR TOUR  -->
+
+    <string name="txt_destinoT">Destino</string>
+    <string name="txt_precioT">Precio</string>
+    <string name="txt_tipoT">Tipo</string>
+    <string name="txt_descripcionT">Descripcion</string>
+    <string name="txt_proveedorT">Proveedor</string>
+    <string name="btn_agregar_tour">Agregar</string>
+
+    <string name="alertaT">Mensaje</string>
+    <string name="mensaje_actualizacionT"> Se actualizó la información del tour</string>
+    <string name="mensaje_eliminarT">Se eliminó correctamente el tour</string>
+    <string name="mensaje_guardarT">Se agregó correctamente el tour</string>
+    <!-- FRAGMENT TOUR  -->
+
+    <string name="tituloTour">TOURS</string>
+    <string name="btn_agregar_t"></string>
+
 </resources>

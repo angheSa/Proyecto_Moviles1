@@ -15,16 +15,22 @@
 
         <activity
                 android:name=".ui.SegundaActivity"
-                android:exported="true" />
+                android:exported="true"
+                android:theme="@style/Theme.AtipaxApp"/>
         <activity
                 android:name=".ui.MainActivity"
-                android:exported="true">
+                android:exported="true"
+                android:theme="@style/Theme2.AtipaxApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+                android:name="preloaded_fonts"
+                android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

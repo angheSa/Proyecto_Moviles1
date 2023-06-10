@@ -8,4 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="titul">#6C6868</color>
+
+    <!--PALETA DE COLORES DEL LOGO-->
+    <color name="verde">#b1b364</color>
+    <color name="rojo">#bf595b</color>
+    <color name="gris1">#aeae97</color>
+    <color name="gris2">#818181</color>
+    <color name="blanco">#f7f6ed</color>
 </resources>
