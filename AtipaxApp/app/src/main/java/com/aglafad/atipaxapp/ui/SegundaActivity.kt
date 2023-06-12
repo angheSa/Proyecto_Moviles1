@@ -36,7 +36,7 @@ class SegundaActivity : AppCompatActivity() {
       //  navController.setGraph(R.navigation.nav_app)
 
       // appBarConfiguration = AppBarConfiguration(navController.graph)
-         appBarConfiguration = AppBarConfiguration(
+        appBarConfiguration = AppBarConfiguration(
             setOf(
                 // Se pasa el id de los fragmentos que no queremos que tengán el boton bar de volver
                  R.id.inicioFragment,R.id.hotelAgregarFragment, R.id.proveedorAgregarFragment, R.id.manteProveedorFragment

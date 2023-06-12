@@ -1,14 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".ui.views.tour.ConsultPaquetesFragment">
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+            <ImageButton
+                    android:text="@string/btnVolver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/btn_volver_inicio"
+                    android:src="@drawable/ic_atras"
 
-</FrameLayout>
+                    android:background="@color/white" />
+            <TextView
+                    android:id="@+id/lbl_titulo_p"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Paquetes de Viaje"
+                    android:textSize="17dp"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/titul"
+                    android:layout_marginLeft="60dp"
+
+                    android:fontFamily="@font/varela_round" />
+        </LinearLayout>
+        <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:layout_marginTop="15dp"
+                >
+            <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchFull"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:queryHint="Paquete"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@android:color/transparent"
+                    android:outlineAmbientShadowColor="@color/verde"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_proveedores"
+            android:layout_width="374dp"
+            android:layout_height="0dp"
+
+            tools:itemCount="7"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:text="@string/btn_agregar_h"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="15dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -63,7 +63,7 @@ class ManteHotelFragment : Fragment() {
 
         binding.btnAgregarHotel.setOnClickListener {
             val accion = ManteHotelFragmentDirections.actionManteHotelFragmentToHotelAgregarFragment(null)
-                findNavController().navigate(accion)
+            findNavController().navigate(accion)
         }
         binding.btnVolverInicio.setOnClickListener {
             val accion = ManteHotelFragmentDirections.actionManteHotelFragmentToInicioFragment()

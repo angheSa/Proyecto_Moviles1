@@ -9,8 +9,7 @@
         app:cardCornerRadius="20dp"
         app:cardElevation="9dp"
         android:layout_marginTop="5dp"
-
-
+        android:paddingBottom="30dp"
         android:layout_marginBottom="70dp"
         android:layout_marginEnd="30dp"
         android:layout_marginStart="30dp">
@@ -69,7 +68,9 @@
             app:layout_constraintTop_toBottomOf="@+id/txtDescripcion"
             app:layout_constraintVertical_bias="0.119"
             tools:layout_editor_absoluteX="0dp"
-            android:inputType="number">
+            android:inputType="number"
+
+            >
 
         <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtPrecioEdit"
@@ -78,32 +79,34 @@
                 android:hint="@string/txt_precio" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtProveedor"
-            android:layout_width="match_parent"
-            android:layout_height="61dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            app:layout_constraintTop_toBottomOf="@+id/txtPrecio"
-            app:layout_constraintVertical_bias="0.119"
-            tools:layout_editor_absoluteX="0dp">
 
-        <AutoCompleteTextView
-                android:id="@+id/autoComProveedor"
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtProveedor"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/txt_proveedor"
-                android:inputType="none" />
-    </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="71dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPrecio"
+                app:layout_constraintVertical_bias="0.119"
+                tools:layout_editor_absoluteX="0dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                    android:id="@+id/autoComProveedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp"
+                    android:hint="@string/txt_proveedor"
+                    android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
     <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="80dp">
         <ImageButton
                 android:text="@string/btnVolver"
                 android:layout_width="wrap_content"

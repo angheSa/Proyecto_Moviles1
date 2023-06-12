@@ -134,4 +134,9 @@
     <string name="tituloTour">TOURS</string>
     <string name="btn_agregar_t"></string>
 
+
+
+    <string-array name="proveedores_array">
+
+    </string-array>
 </resources>

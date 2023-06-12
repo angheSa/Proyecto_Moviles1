@@ -58,7 +58,14 @@ class InicioFragment : Fragment() {
             val accion = InicioFragmentDirections.actionInicioFragmentToManteTourFragment()
             findNavController().navigate(accion)
         }
-
+        binding.imgBtnFullDay.setOnClickListener {
+            val accion = InicioFragmentDirections.actionInicioFragmentToConsultFullDayFragment()
+            findNavController().navigate(accion)
+        }
+        binding.imgBtnPaquete.setOnClickListener{
+            val accion = InicioFragmentDirections.actionInicioFragmentToConsultPaquetesFragment()
+            findNavController().navigate(accion)
+        }
 
 
 

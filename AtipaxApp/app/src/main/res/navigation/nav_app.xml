@@ -20,6 +20,12 @@
         <action
                 android:id="@+id/action_inicioFragment_to_manteProveedorFragment"
                 app:destination="@id/manteProveedorFragment" />
+        <action
+                android:id="@+id/action_inicioFragment_to_consultFullDayFragment"
+                app:destination="@id/consultFullDayFragment" />
+        <action
+                android:id="@+id/action_inicioFragment_to_consultPaquetesFragment"
+                app:destination="@id/consultPaquetesFragment" />
 
     </fragment>
 
@@ -32,6 +38,9 @@
         <action
             android:id="@+id/action_manteTourFragment_to_inicioFragment"
             app:destination="@id/inicioFragment" />
+        <action
+                android:id="@+id/action_manteTourFragment_to_agregarTourFragment"
+                app:destination="@id/agregarTourFragment" />
     </fragment>
     <fragment
             android:id="@+id/manteHotelFragment"
@@ -83,6 +92,37 @@
         <action
                 android:id="@+id/action_proveedorAgregarFragment_to_manteProveedorFragment"
                 app:destination="@id/manteProveedorFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/agregarTourFragment"
+            android:name="com.aglafad.atipaxapp.ui.views.tour.AgregarTourFragment"
+            android:label="fragment_agregar_tour"
+            tools:layout="@layout/fragment_agregar_tour" >
+        <argument
+                android:name="tours"
+                app:argType="com.aglafad.atipaxapp.entity.Tour"
+                app:nullable="true" />
+        <action
+                android:id="@+id/action_agregarTourFragment_to_manteTourFragment"
+                app:destination="@id/manteTourFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/consultFullDayFragment"
+            android:name="com.aglafad.atipaxapp.ui.views.tour.ConsultFullDayFragment"
+            android:label="Full Day"
+            tools:layout="@layout/fragment_consult_full_day">
+        <action
+                android:id="@+id/action_consultFullDayFragment_to_inicioFragment"
+                app:destination="@id/inicioFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/consultPaquetesFragment"
+            android:name="com.aglafad.atipaxapp.ui.views.tour.ConsultPaquetesFragment"
+            android:label="Paquetes"
+            tools:layout="@layout/fragment_consult_paquetes">
+        <action
+                android:id="@+id/action_consultPaquetesFragment_to_inicioFragment"
+                app:destination="@id/inicioFragment" />
     </fragment>
 
 </navigation>
