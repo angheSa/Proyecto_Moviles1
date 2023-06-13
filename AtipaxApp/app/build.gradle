@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 android {
     namespace 'com.aglafad.atipaxapp'
@@ -73,4 +74,7 @@ dependencies {
     // Kotlin components
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+
+
+    implementation platform('com.google.firebase:firebase-bom:32.1.0')
 }

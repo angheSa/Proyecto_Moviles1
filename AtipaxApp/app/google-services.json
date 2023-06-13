@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "770792091737",
+    "project_id": "atipaxapp",
+    "storage_bucket": "atipaxapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770792091737:android:9e06e70fd1dd7d6b35c148",
+        "android_client_info": {
+          "package_name": "com.aglafad.atipaxapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770792091737-j3p5dcguk5or1jq68m38e1j1e0mgak1p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLKNKZfVoo9XygUFW_rC4V2FO77880FHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770792091737-j3p5dcguk5or1jq68m38e1j1e0mgak1p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
