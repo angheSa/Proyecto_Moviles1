@@ -15,6 +15,20 @@ import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.filter
 
-class ProveedorAutoCompleteAdapter{
+class ProveedorAutoCompleteAdapter(context: Context,  provee: List<Proveedor>):
+    ArrayAdapter<Proveedor>(context,0,provee) {
+
+    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+        val view = convertView?: LayoutInflater.from(context).inflate(R.layout.item_cbo_proveedor,parent,false)
+        getItem(position)?.let { lista ->
+            view.findViewById<TextView>(R.id.textCbo).apply {
+                text=lista.id_provee.toString()
+            }
+
+
+        }
+
+        return  view
+    }
 
 }

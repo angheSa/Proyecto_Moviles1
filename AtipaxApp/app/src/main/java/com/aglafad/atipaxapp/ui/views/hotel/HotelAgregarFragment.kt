@@ -37,12 +37,14 @@ class HotelAgregarFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val hViewModel: HotelViewModel by activityViewModels {
-     //   val repository = (requireActivity().application as AtipaxApplication).repository
-       // ViewModelFactory(repository)
+
        val repositoryHote = requireContext().applicationContext as AtipaxApplication
        HotelViewModelFactory(repositoryHote.repositoryHotel)
     }
-
+    private val proveedorViewModel: ProveedorViewModel by viewModels {
+        val repositoryProvee = requireContext().applicationContext as AtipaxApplication
+        ProveedorViewModelFactory(repositoryProvee.repositoryProvedor)
+    }
 
     private val args: HotelAgregarFragmentArgs by navArgs()
     override fun onCreateView(
@@ -58,11 +60,26 @@ class HotelAgregarFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val autoCompletePoveedor: AutoCompleteTextView = binding.autoComProveedor
+        val autoCompleteProveedor: AutoCompleteTextView = binding.autoComProveedor
 
         var proveedorList = mutableListOf<Proveedor>()
+    //    val proveedorAdapter = ProveedorAutoCompleteAdapter(requireContext(), proveedorList)
+      //  autoCompletePoveedor.setAdapter(proveedorAdapter)
+
+
         val proveedorAdapter = ProveedorAutoCompleteAdapter(requireContext(), proveedorList)
-        autoCompletePoveedor.setAdapter(proveedorAdapter)
+        autoCompleteProveedor.setAdapter(proveedorAdapter)
+
+        // Obtén los proveedores de tu base de datos y actualiza la lista proveedorList
+       // val proveedorRepository = ProveedorRepository(requireContext().applicationContext as AtipaxApplication)
+        proveedorViewModel.proveedores.observe(viewLifecycleOwner) { proveedores ->
+            proveedorList.clear()
+            proveedorList.addAll(proveedores)
+            proveedorAdapter.notifyDataSetChanged()
+        }
+
+
+
         val hotelSelecc = args.hoteles;
 
         if (hotelSelecc == null){
@@ -79,14 +96,14 @@ class HotelAgregarFragment : Fragment() {
             val des = hotelSelecc?.destinoHotel.toString()
             val descr = hotelSelecc?.descripcion.toString()
             val pre = hotelSelecc?.precio.toString()
-       //     val nombreProveedor = hotelSelecc?.idProveedor.toString()
+           val nombreProveedor = hotelSelecc?.idProveedor.toString()
 
           //  binding.txtCodigoEdit.setText(co)
 
             binding.txtDestinoEdit.setText(des)
             binding.txtDescripcionEdit.setText(descr)
             binding.txtPrecioEdit.setText(pre)
-            //binding.txtProveedorEdit.setText(nombreProveedor)
+            binding.autoComProveedor.setText(nombreProveedor)
 
 
             binding.btnAgregar.visibility = View.GONE
@@ -101,11 +118,11 @@ class HotelAgregarFragment : Fragment() {
             val destin = binding.txtDestino.editText?.text.toString()
             val descri = binding.txtDescripcion.editText?.text.toString()
             val preci = binding.txtPrecio.editText?.text.toString()
-           // val prov = binding.txtProveedor.editText?.text.toString()
+           val prov = binding.autoComProveedor.text.toString()
 
             // pasamos al objeto los valores
-     //       val objHotel = Hotel(id,destin,descri,preci.toDouble(),prov.toInt())
-       //     hViewModel.insertar(objHotel)
+          val objHotel = Hotel(0,destin,descri,preci.toDouble(),prov.toInt())
+            hViewModel.insertar(objHotel)
 
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(resources.getString(R.string.alerta_p))
