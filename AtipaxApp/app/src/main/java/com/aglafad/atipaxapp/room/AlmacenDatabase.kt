@@ -11,7 +11,7 @@ import com.aglafad.atipaxapp.entity.Proveedor
 import com.aglafad.atipaxapp.entity.Usuario
 import com.aglafad.atipaxapp.entity.Tour
 
-@Database(entities = [Usuario::class, Proveedor::class,Tour::class, Hotel::class], version = 1 )
+@Database(entities = [Usuario::class, Proveedor::class,Tour::class, Hotel::class], version = 2)
 abstract class AlmacenDatabase: RoomDatabase() {
 
     abstract fun usuarioDao(): UsuarioDao
@@ -26,7 +26,7 @@ abstract class AlmacenDatabase: RoomDatabase() {
         fun getInstance(context: Context): AlmacenDatabase{
             return INSTANCE?: synchronized(this){
                 val obj = Room.databaseBuilder(context, AlmacenDatabase::class.java, "BDAtipaxGroup")
-
+                    .fallbackToDestructiveMigration()
                     .allowMainThreadQueries()
                     .build()
                 INSTANCE = obj

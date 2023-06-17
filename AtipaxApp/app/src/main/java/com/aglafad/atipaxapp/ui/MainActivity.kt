@@ -41,7 +41,9 @@ class MainActivity : AppCompatActivity() {
         user = binding.txtUsuario
         psw = binding.txtPsw
         btn_ingresar = binding.btnIngresar
-        db = Room.databaseBuilder(applicationContext, AlmacenDatabase::class.java, "BDAtipaxGroup").build()
+        db = Room.databaseBuilder(applicationContext, AlmacenDatabase::class.java, "BDAtipaxGroup")
+            .fallbackToDestructiveMigration()
+            .build()
         usuarioDao = db.usuarioDao()
 
         binding.btnIngresar.setOnClickListener {
