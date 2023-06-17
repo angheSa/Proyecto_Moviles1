@@ -126,7 +126,6 @@ class HotelAgregarFragment : Fragment() {
             // pasamos al objeto los valores
           val objHotel = Hotel(0,destin,nombr,descri,preci.toDouble(),prov.toInt())
 
-
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(resources.getString(R.string.alerta_p))
                 .setMessage(resources.getString(R.string.mensaje_guardar))
