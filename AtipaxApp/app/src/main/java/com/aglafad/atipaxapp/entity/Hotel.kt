@@ -13,6 +13,7 @@ import androidx.room.ForeignKey
 
     )
 class Hotel  (@PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id_hotel" ) val id: Int = 0,
+              @ColumnInfo(name = "nombre_hotel") val nombreHotel: String?,
               @ColumnInfo(name = "destino_hotel" ) val destinoHotel: String?,
               @ColumnInfo(name = "descripcion_hotel" ) val descripcion: String?,
               @ColumnInfo(name = "precio_hotel" ) val precio: Double?,

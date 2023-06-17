@@ -70,14 +70,17 @@ class HotelAgregarFragment : Fragment() {
         val proveedorAdapter = ProveedorAutoCompleteAdapter(requireContext(), proveedorList)
         autoCompleteProveedor.setAdapter(proveedorAdapter)
 
-        // Obtén los proveedores de tu base de datos y actualiza la lista proveedorList
-       // val proveedorRepository = ProveedorRepository(requireContext().applicationContext as AtipaxApplication)
         proveedorViewModel.proveedores.observe(viewLifecycleOwner) { proveedores ->
             proveedorList.clear()
             proveedorList.addAll(proveedores)
             proveedorAdapter.notifyDataSetChanged()
         }
-
+        // pasar el id al txt
+        autoCompleteProveedor.setOnItemClickListener { _, _, position, _ ->
+            val selectedProveedor = proveedorAdapter.getItem(position)
+            val proveedorCode = selectedProveedor?.id_provee.toString()
+            autoCompleteProveedor.setText(proveedorCode, false)
+        }
 
 
         val hotelSelecc = args.hoteles;
@@ -92,18 +95,18 @@ class HotelAgregarFragment : Fragment() {
 
 
 
-        //    val co = hotelSelecc?.id.toString()
+           val nom = hotelSelecc?.nombreHotel.toString()
             val des = hotelSelecc?.destinoHotel.toString()
             val descr = hotelSelecc?.descripcion.toString()
             val pre = hotelSelecc?.precio.toString()
-           val nombreProveedor = hotelSelecc?.idProveedor.toString()
+           val cod = hotelSelecc?.idProveedor.toString()
 
-          //  binding.txtCodigoEdit.setText(co)
 
+           binding.txtNombreEdit.setText(nom)
             binding.txtDestinoEdit.setText(des)
             binding.txtDescripcionEdit.setText(descr)
             binding.txtPrecioEdit.setText(pre)
-            binding.autoComProveedor.setText(nombreProveedor)
+            binding.autoComProveedor.setText(cod)
 
 
             binding.btnAgregar.visibility = View.GONE
@@ -114,20 +117,22 @@ class HotelAgregarFragment : Fragment() {
         }
 
         binding.btnAgregar.setOnClickListener {
-         //  val codig = binding.txtCodigo.editText?.text.toString()
+           val nombr = binding.txtNombre.editText?.text.toString()
             val destin = binding.txtDestino.editText?.text.toString()
             val descri = binding.txtDescripcion.editText?.text.toString()
             val preci = binding.txtPrecio.editText?.text.toString()
            val prov = binding.autoComProveedor.text.toString()
 
             // pasamos al objeto los valores
-          val objHotel = Hotel(0,destin,descri,preci.toDouble(),prov.toInt())
-            hViewModel.insertar(objHotel)
+          val objHotel = Hotel(0,destin,nombr,descri,preci.toDouble(),prov.toInt())
+
 
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(resources.getString(R.string.alerta_p))
                 .setMessage(resources.getString(R.string.mensaje_guardar))
+                .setNegativeButton("Cancelar", null)
                 .setPositiveButton(resources.getString(R.string.aceptar)) { _, _ ->
+                    hViewModel.insertar(objHotel)
                     val action = HotelAgregarFragmentDirections.actionHotelAgregarFragmentToManteHotelFragment()
                     findNavController().navigate(action)
                 }
@@ -136,25 +141,28 @@ class HotelAgregarFragment : Fragment() {
 
         binding.btnEditar.setOnClickListener{
             //Declaramos los datos a actualizar
-          //  val codig = binding.txtCodigo.editText?.text.toString()
+            val nombr = binding.txtNombre.editText?.text.toString()
             val destin = binding.txtDestino.editText?.text.toString()
             val descri = binding.txtDescripcion.editText?.text.toString()
             val preci = binding.txtPrecio.editText?.text.toString()
-          //  val prov = binding.txtProveedor.editText?.text.toString()
-
+           val prov = binding.txtProveedor.editText?.text.toString()
+            val co = hotelSelecc?.id
+            if (co != null) {
             // pasamos al objeto los valores
-       //     val objHotel = Hotel(id,destin,descri,preci.toDouble(),prov.toInt())
-         //   hViewModel.insertar(objHotel)
+          val objHotel = Hotel(co,destin,nombr,descri,preci.toDouble(),prov.toInt())
 
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(resources.getString(R.string.alerta_p))
-                .setMessage(resources.getString(R.string.mensaje_actualizacion))
+                .setMessage("¿Quiere actualizar el hotel $nombr?")
+                .setNegativeButton("Cancelar", null)
                 .setPositiveButton(resources.getString(R.string.aceptar)) { _, _ ->
+                    hViewModel.insertar(objHotel)
+
                     val action = HotelAgregarFragmentDirections.actionHotelAgregarFragmentToManteHotelFragment()
                     findNavController().navigate(action)
                 }
                 .show()
-
+                 }
         }
 
         binding.btnEliminar.setOnClickListener {
@@ -166,6 +174,7 @@ class HotelAgregarFragment : Fragment() {
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(resources.getString(R.string.alerta_p))
                 .setMessage(resources.getString(R.string.mensaje_eliminar))
+                .setNegativeButton("Cancelar", null)
                 .setPositiveButton(resources.getString(R.string.aceptar)){ _, _ ->
                     val action = HotelAgregarFragmentDirections.actionHotelAgregarFragmentToManteHotelFragment()
                     findNavController().navigate(action)

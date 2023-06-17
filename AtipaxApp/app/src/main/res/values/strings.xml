@@ -61,11 +61,13 @@
     <!-- ITEM HOTEL  -->
     <!-- label sin datos  -->
     <string name="destinoLabel">Destino</string>
+    <string name="nombreLabel">Nombre</string>
     <string name="descripcionLabel">Descripcion</string>
     <string name="precioLabel">Precio</string>
     <string name="proveedorLabel">Proveedor</string>
     <!-- label con datos  -->
     <string name="destinoHotel"></string>
+    <string name="nombreHotel"></string>
     <string name="descripcionHotel"></string>
     <string name="precioHotel"></string>
     <string name="codigoHotel"></string>
@@ -84,6 +86,7 @@
     <!-- FRAGMENT AGREGAR HOTEL  -->
     <string name="txt_codigo">Codigo</string>
     <string name="txt_destino">Destino</string>
+    <string name="txt_nombre">Nombre</string>
     <string name="txt_precio">Precio</string>
     <string name="txt_descripcion">Descripcion</string>
     <string name="txt_proveedor">Proveedor</string>
@@ -91,7 +94,7 @@
 
     <string name="alerta">Mensaje</string>
     <string name="mensaje_actualizacion"> Se actualizó la información del hotel</string>
-    <string name="mensaje_eliminar">Se eliminó correctamente el hotel</string>
+    <string name="mensaje_eliminar">¿Quiere eliminar el Hotel?</string>
     <string name="mensaje_guardar">Se agregó correctamente el hotel</string>
 
     <string name="aceptar">Aceptar</string>

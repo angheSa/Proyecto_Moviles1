@@ -37,7 +37,24 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/txt_destino" />
     </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtNombre"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDestino"
+                app:layout_constraintVertical_bias="0.119"
+                tools:layout_editor_absoluteX="0dp">
 
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtNombreEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_nombre" />
+        </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/txtDescripcion"
             android:layout_width="match_parent"
@@ -46,7 +63,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDestino"
+            app:layout_constraintTop_toBottomOf="@+id/txtNombre"
             app:layout_constraintVertical_bias="0.119"
             tools:layout_editor_absoluteX="0dp">
 

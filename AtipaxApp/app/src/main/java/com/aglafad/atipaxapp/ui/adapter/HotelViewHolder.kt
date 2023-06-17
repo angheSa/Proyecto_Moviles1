@@ -9,7 +9,7 @@ class HotelViewHolder (private val binding: ItemHotelBinding) : ViewHolder(bindi
 
    fun bind(hotel: Hotel) {
 
-      //  binding.lblCodigoHotel.text = hotel.id.toString()
+        binding.lblNombreHotel.text = hotel.nombreHotel.toString()
         binding.lblDestinoHotel.text = hotel.destinoHotel.toString()
        binding.lblDescripcionHotel.text = hotel.descripcion.toString()
         binding.lblPrecioHotel.text = hotel.precio.toString()

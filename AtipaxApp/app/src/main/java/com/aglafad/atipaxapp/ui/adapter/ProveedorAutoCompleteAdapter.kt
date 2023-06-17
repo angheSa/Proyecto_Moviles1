@@ -19,16 +19,13 @@ class ProveedorAutoCompleteAdapter(context: Context,  provee: List<Proveedor>):
     ArrayAdapter<Proveedor>(context,0,provee) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val view = convertView?: LayoutInflater.from(context).inflate(R.layout.item_cbo_proveedor,parent,false)
-        getItem(position)?.let { lista ->
+        val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.item_cbo_proveedor, parent, false)
+        getItem(position)?.let { proveedor ->
             view.findViewById<TextView>(R.id.textCbo).apply {
-                text=lista.id_provee.toString()
+                text = proveedor.id_provee.toString()
             }
-
-
         }
-
-        return  view
+        return view
     }
 
 }
