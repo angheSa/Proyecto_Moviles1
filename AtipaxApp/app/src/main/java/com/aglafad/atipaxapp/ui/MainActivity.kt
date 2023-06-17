@@ -96,11 +96,13 @@ class MainActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         document = task.result
                         if (document.exists()) {
-                            // El usuario existe en la colección
-                            // Puedes acceder a los datos del usuario utilizando document.data
                             if (document.get("password") == psw ) {
                                 startActivity(intent)
-                                Toast.makeText(this@MainActivity,"Bienvenido, " + document.getField("nombre"),Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    this@MainActivity,
+                                    "Bienvenido, " + document.getField("nombre"),
+                                    Toast.LENGTH_SHORT)
+                                    .show()
                             }
                             else
                                 Toast.makeText(
