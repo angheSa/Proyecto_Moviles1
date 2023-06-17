@@ -3,11 +3,10 @@ package com.aglafad.atipaxapp.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.aglafad.atipaxapp.databinding.ItemTourBinding
 import com.aglafad.atipaxapp.entity.Tour
 
-class TourAdapter {
-   /*
-   ( val onclick : (Tour) -> Unit) : RecyclerView.Adapter<TourViewHolder>()
+class TourAdapter(val onclick : (Tour) -> Unit) : RecyclerView.Adapter<TourViewHolder>(){
    private var listas = mutableListOf<Tour>()
 
     fun listasTours(lista: List<Tour>){
@@ -30,6 +29,6 @@ class TourAdapter {
         holder.itemView.setOnClickListener {
             onclick(t)
         }
-    }*/
+    }
 
 }

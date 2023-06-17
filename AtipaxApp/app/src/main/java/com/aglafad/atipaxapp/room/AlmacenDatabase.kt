@@ -29,9 +29,10 @@ abstract class AlmacenDatabase: RoomDatabase() {
 
                     .allowMainThreadQueries()
                     .build()
-
                 INSTANCE = obj
                 obj
+
+
             }
         }
 

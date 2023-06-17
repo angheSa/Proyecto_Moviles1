@@ -130,7 +130,7 @@
 
     <string name="alertaT">Mensaje</string>
     <string name="mensaje_actualizacionT"> Se actualizó la información del tour</string>
-    <string name="mensaje_eliminarT">Se eliminó correctamente el tour</string>
+    <string name="mensaje_eliminarT">¿Desea eliminar el tour?</string>
     <string name="mensaje_guardarT">Se agregó correctamente el tour</string>
     <!-- FRAGMENT TOUR  -->
 

@@ -156,7 +156,7 @@ class HotelAgregarFragment : Fragment() {
                 .setMessage("¿Quiere actualizar el hotel $nombr?")
                 .setNegativeButton("Cancelar", null)
                 .setPositiveButton(resources.getString(R.string.aceptar)) { _, _ ->
-                    hViewModel.insertar(objHotel)
+                    hViewModel.actualizar(objHotel)
 
                     val action = HotelAgregarFragmentDirections.actionHotelAgregarFragmentToManteHotelFragment()
                     findNavController().navigate(action)
