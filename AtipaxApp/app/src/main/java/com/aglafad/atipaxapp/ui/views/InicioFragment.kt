@@ -66,7 +66,10 @@ class InicioFragment : Fragment() {
             val accion = InicioFragmentDirections.actionInicioFragmentToConsultPaquetesFragment()
             findNavController().navigate(accion)
         }
-
+        binding.imgBtnMapa.setOnClickListener {
+            val accion = InicioFragmentDirections.actionInicioFragmentToMapsFragment()
+            findNavController().navigate(accion)
+        }
 
 
     }

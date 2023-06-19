@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.aglafad.atipaxapp.R
+import com.aglafad.atipaxapp.databinding.FragmentMapsBinding
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -16,7 +17,8 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsFragment : Fragment() {
-
+    private var _binding: FragmentMapsBinding? = null
+    private val binding get() = _binding!!
     private val callback = OnMapReadyCallback { googleMap ->
         /**
          * Manipulates the map once available.
@@ -48,7 +50,9 @@ class MapsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_maps, container, false)
+        // Inflate the layout for this fragment
+        _binding = FragmentMapsBinding.inflate(inflater,container,false)
+        return binding.root
 
     }
 

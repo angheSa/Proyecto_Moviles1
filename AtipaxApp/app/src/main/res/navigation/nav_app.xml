@@ -26,6 +26,9 @@
         <action
                 android:id="@+id/action_inicioFragment_to_consultPaquetesFragment"
                 app:destination="@id/consultPaquetesFragment" />
+        <action
+                android:id="@+id/action_inicioFragment_to_mapsFragment"
+                app:destination="@id/mapsFragment" />
 
     </fragment>
 
@@ -122,6 +125,15 @@
             tools:layout="@layout/fragment_consult_paquetes">
         <action
                 android:id="@+id/action_consultPaquetesFragment_to_inicioFragment"
+                app:destination="@id/inicioFragment" />
+    </fragment>
+    <fragment
+            android:id="@+id/mapsFragment"
+            android:name="com.aglafad.atipaxapp.ui.views.mapas.MapsFragment"
+            android:label="fragment_maps"
+            tools:layout="@layout/fragment_maps" >
+        <action
+                android:id="@+id/action_mapsFragment_to_inicioFragment"
                 app:destination="@id/inicioFragment" />
     </fragment>
 
