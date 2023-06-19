@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        tools:context=".ui.views.mapas.MapsFragment">
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/tgb_opciones"
+            android:layout_gravity="center"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:checkedButton="@+id/btn_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/btn_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Normal" />
+
+        <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/btn_satelite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Satelite" />
+
+        <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/btn_hibrido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hibrido" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+    <fragment
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+</LinearLayout>
