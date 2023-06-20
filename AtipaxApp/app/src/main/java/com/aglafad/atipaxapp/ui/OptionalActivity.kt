@@ -112,16 +112,23 @@ class OptionalActivity : AppCompatActivity() {
                         if (document.exists()) {
                             etTo = "" + document.getField("correo")
                             etSubject = "Recuperación de cuenta de " + document.getField("nombre")
-                            etMessage = "Gracias por usar el servicio de recuperación de contraseña." + "\n" + "\n" +
-                                        "Su contraseña es: " + document.getField("password") + "" + "\n" + "\n" +
-                                        "Por seguridad, no comparta su contraseña."+ "\n" + "\n" + "\n" + "\n" + "\n" +
-                                        "Atipax Group."
+                            etMessage = """
+                                                <html>
+                                                    <body>
+                                                        <h3>Gracias por usar el servicio de recuperaci&oacute;n de contrase&ntilde;a.</h3>
+                                                        <p>Su contrase&ntilde;a es: ${document.get("password")}</p>
+                                                        <p>Por seguridad, no comparta su contrase&ntilde;a.</p>
+                                                        <br>
+                                                        <img src="https://i.ibb.co/zHqhzx0/atipaxgroup.jpg" alt="Descripción de la imagen" width="50%" height="auto">
+                                                    </body>
+                                                </html>"""
                             try {
                                 val message : Message = MimeMessage(session)
                                 message.setFrom(InternetAddress(sEmail))
                                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(etTo))
                                 message.subject = etSubject
-                                message.setText(etMessage)
+                                message.setContent(etMessage, "text/html")
+                                println("MENSAJE: " + message.content)
                                 SendMail().execute(message)
                             }
                             catch (e : Exception){
