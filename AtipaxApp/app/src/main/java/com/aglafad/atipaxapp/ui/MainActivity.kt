@@ -17,6 +17,7 @@ import kotlinx.coroutines.flow.Flow
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import android.graphics.Color
+import com.aglafad.atipaxapp.R
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.ktx.getField
 
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     private val rojo = Color.RED
     private val blanco = Color.WHITE
     private val negro = Color.BLACK
-    public lateinit var document : DocumentSnapshot
+    lateinit var document : DocumentSnapshot
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,24 +68,33 @@ class MainActivity : AppCompatActivity() {
             checkIfUserExists(usuario, contraseña)
 
         }
+        binding.lblRecoverPsw.setOnClickListener{
+            val intent = Intent(this, OptionalActivity::class.java)
+            val gray = resources.getColor(R.color.gris2, null)
+            val white = resources.getColor(R.color.blanco, null)
+            binding.lblRecoverPsw.setBackgroundColor(gray)
+            startActivity(intent)
+            binding.lblRecoverPsw.setBackgroundColor(white)
+        }
+
     }
     private fun checkIfUserExists(user: String, psw : String) {
         val intent = Intent(this, SegundaActivity::class.java)
         if (user == "" && psw == ""){
-            binding.txtUsuario.setHint("Ingrese usuario")
+            binding.txtUsuario.hint = "Ingrese usuario"
             binding.txtUsuario.setHintTextColor(rojo)
             binding.lblUsuario.setTextColor(rojo)
-            binding.txtPsw.setHint("Ingrese contraseña")
+            binding.txtPsw.hint = "Ingrese contraseña"
             binding.txtPsw.setHintTextColor(rojo)
             binding.lblPsw.setTextColor(rojo)
         }
         else if (user == ""){
-            binding.txtUsuario.setHint("Ingrese usuario")
+            binding.txtUsuario.hint = "Ingrese usuario"
             binding.txtUsuario.setHintTextColor(rojo)
             binding.lblUsuario.setTextColor(rojo)
         }
         else if (psw == ""){
-            binding.txtPsw.setHint("Ingrese contraseña")
+            binding.txtPsw.hint = "Ingrese contraseña"
             binding.txtPsw.setHintTextColor(rojo)
             binding.lblPsw.setTextColor(rojo)
         }

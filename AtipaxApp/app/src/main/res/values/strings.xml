@@ -9,15 +9,19 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="recover_password">¿Olvidaste tu contraseña?</string>
+    <string name="recover_pasword_title">Recupera tu contraseña</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_second">SecondActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="btn_ingresar">Ingresar</string>
     <!-- GENERALES  -->
     <string name="btnVolver">Volver</string>
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="btn_recuperar">Recuperar</string>
+    <string name="confirmacion">Confirmacion</string>
 
     <!-- ITEM PROVEEDOR  -->
     <!-- label sin datos  -->
@@ -98,6 +102,7 @@
     <string name="mensaje_guardar">Se agregó correctamente el hotel</string>
 
     <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
     <string name="title_activity_main2">MainActivity2</string>
 
     <string name="coP">Cod</string>

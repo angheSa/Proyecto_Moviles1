@@ -1,23 +1,14 @@
 package com.aglafad.atipaxapp.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
-import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.aglafad.atipaxapp.R
 import com.aglafad.atipaxapp.databinding.ActivitySegundaBinding
-import com.aglafad.atipaxapp.ui.views.InicioFragment
-import com.aglafad.atipaxapp.ui.views.InicioFragmentDirections
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class SegundaActivity : AppCompatActivity() {
 

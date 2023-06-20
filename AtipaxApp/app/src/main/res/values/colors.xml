@@ -9,6 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="titul">#6C6868</color>
 
+    <color name="blue">#0000FF</color>
+    <color name="darkgreen">#909151</color>
+
     <!--PALETA DE COLORES DEL LOGO-->
     <color name="verde">#b1b364</color>
     <color name="rojo">#bf595b</color>
