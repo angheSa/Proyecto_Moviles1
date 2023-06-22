@@ -9,12 +9,14 @@ import androidx.fragment.app.viewModels
 
 
 import androidx.navigation.fragment.findNavController
+import androidx.room.Room
 import com.aglafad.atipaxapp.AtipaxApplication
 import com.aglafad.atipaxapp.databinding.FragmentManteHotelBinding
+import com.aglafad.atipaxapp.room.AlmacenDatabase
+import com.aglafad.atipaxapp.room.HotelDao
 
 import com.aglafad.atipaxapp.ui.adapter.HotelAdapter
 import com.aglafad.atipaxapp.ui.viewmodel.*
-import com.aglafad.atipaxapp.ui.views.proveedor.ManteProveedorFragmentDirections
 
 
 class ManteHotelFragment : Fragment() {
@@ -24,8 +26,11 @@ class ManteHotelFragment : Fragment() {
 
     private lateinit var hotelAdapt: HotelAdapter
     private val hViewModel: HotelViewModel by viewModels {
+        val database = Room.databaseBuilder(requireContext(), AlmacenDatabase::class.java, "BDAtipaxGroup")
+            .build()
+        val hotelDao = database.hotelDao()
         val repositoryHo = requireContext().applicationContext as AtipaxApplication
-        HotelViewModelFactory(repositoryHo.repositoryHotel)
+        HotelViewModelFactory(repositoryHo.repositoryHotel, hotelDao)
     }
 
     override fun onCreateView(

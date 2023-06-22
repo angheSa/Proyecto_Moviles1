@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 class HotelRepository(private val hotelDao : HotelDao) {
 
 
-    val listaHoteles : Flow<List<Hotel>> = hotelDao.getHoteles()
+    var listaHoteles : Flow<List<Hotel>> = hotelDao.getHoteles()
 
     suspend fun guardar(producto: Hotel) {
         hotelDao.insert(producto)

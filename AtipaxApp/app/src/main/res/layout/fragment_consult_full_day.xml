@@ -33,16 +33,13 @@
                 android:id="@+id/lbl_titulo_p"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:text="Full Days"
                 android:textSize="17dp"
                 android:layout_marginTop="6dp"
                 android:textColor="@color/titul"
-                android:layout_marginLeft="100dp"
-
-                android:fontFamily="@font/varela_round" />
+                android:layout_marginLeft="100dp" />
         </LinearLayout>
-        <com.google.android.material.card.MaterialCardView
+        <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -52,7 +49,7 @@
                 android:layout_marginTop="15dp"
                 >
             <androidx.appcompat.widget.SearchView
-                    android:id="@+id/searchFull"
+                    android:id="@+id/txtBuscar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:queryHint="Full Day"
@@ -61,7 +58,7 @@
                     android:outlineAmbientShadowColor="@color/verde"/>
 
 
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_proveedores"

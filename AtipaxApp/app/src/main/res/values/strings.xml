@@ -147,4 +147,7 @@
     <string-array name="proveedores_array">
 
     </string-array>
+
+    <!-- FRAGMENT CONSULTA PAQUETES-->
+    <string name="consulta_paquetes_titulo">Paquetes</string>
 </resources>

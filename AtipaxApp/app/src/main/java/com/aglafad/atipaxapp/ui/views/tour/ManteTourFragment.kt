@@ -7,19 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.room.Room
 import com.aglafad.atipaxapp.AtipaxApplication
-import com.aglafad.atipaxapp.R
-import com.aglafad.atipaxapp.databinding.FragmentManteHotelBinding
-import com.aglafad.atipaxapp.databinding.FragmentManteProveedorBinding
 import com.aglafad.atipaxapp.databinding.FragmentManteTourBinding
-import com.aglafad.atipaxapp.ui.adapter.HotelAdapter
+import com.aglafad.atipaxapp.room.AlmacenDatabase
+import com.aglafad.atipaxapp.room.HotelDao
 import com.aglafad.atipaxapp.ui.adapter.TourAdapter
-import com.aglafad.atipaxapp.ui.viewmodel.HotelViewModel
-import com.aglafad.atipaxapp.ui.viewmodel.HotelViewModelFactory
 import com.aglafad.atipaxapp.ui.viewmodel.TourViewModel
 import com.aglafad.atipaxapp.ui.viewmodel.TourViewModelFactory
-import com.aglafad.atipaxapp.ui.views.hotel.ManteHotelFragmentDirections
-import com.aglafad.atipaxapp.ui.views.proveedor.ManteProveedorFragmentDirections
 
 
 class ManteTourFragment : Fragment() {
@@ -28,8 +23,11 @@ class ManteTourFragment : Fragment() {
 
     private lateinit var tourAdapt: TourAdapter
     private val tViewModel: TourViewModel by viewModels {
+        val database = Room.databaseBuilder(requireContext(), AlmacenDatabase::class.java, "BDAtipaxGroup")
+            .build()
+        val tourDao = database.tourDao()
         val repositoryTu = requireContext().applicationContext as AtipaxApplication
-        TourViewModelFactory(repositoryTu.repositoryTour)
+        TourViewModelFactory(repositoryTu.repositoryTour, tourDao)
     }
 
     override fun onCreateView(

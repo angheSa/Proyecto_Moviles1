@@ -5,13 +5,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.aglafad.atipaxapp.databinding.ItemHotelBinding
 import com.aglafad.atipaxapp.entity.Hotel
+import com.aglafad.atipaxapp.entity.Tour
 
-class HotelAdapter(val onclick : (Hotel) -> Unit) : Adapter<HotelViewHolder>() {
+class HotelAdapter(val onclick: (Hotel) -> Unit) : Adapter<HotelViewHolder>() {
 
-    private var listas = mutableListOf<Hotel>()
+
+    var listas = mutableListOf<Hotel>()
 
     fun listasHoteles (lista: List<Hotel>){
         listas.addAll(lista)
+        notifyDataSetChanged()
+    }
+    fun actualizarDatos(nuevaListaHoteles: List<Hotel>) {
+        listas.clear()
+        listas.addAll(nuevaListaHoteles)
         notifyDataSetChanged()
     }
 
@@ -34,6 +41,6 @@ class HotelAdapter(val onclick : (Hotel) -> Unit) : Adapter<HotelViewHolder>() {
         /*  holder.btnDelete.setOnClickListener {
               onclickDelete(provee)
           }*/
-
     }
+
 }

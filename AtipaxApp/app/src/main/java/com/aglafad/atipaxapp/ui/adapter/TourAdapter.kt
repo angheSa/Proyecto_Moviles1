@@ -4,13 +4,20 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aglafad.atipaxapp.databinding.ItemTourBinding
+import com.aglafad.atipaxapp.entity.Hotel
 import com.aglafad.atipaxapp.entity.Tour
 
 class TourAdapter(val onclick : (Tour) -> Unit) : RecyclerView.Adapter<TourViewHolder>(){
-   private var listas = mutableListOf<Tour>()
+
+    var listas = mutableListOf<Tour>()
 
     fun listasTours(lista: List<Tour>){
         listas.addAll(lista)
+        notifyDataSetChanged()
+    }
+    fun actualizarDatos(nuevaListaTours: List<Tour>) {
+        listas.clear()
+        listas.addAll(nuevaListaTours)
         notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):TourViewHolder {
@@ -30,5 +37,4 @@ class TourAdapter(val onclick : (Tour) -> Unit) : RecyclerView.Adapter<TourViewH
             onclick(t)
         }
     }
-
 }

@@ -10,19 +10,15 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.room.Room
 import com.aglafad.atipaxapp.AtipaxApplication
 import com.aglafad.atipaxapp.R
 import com.aglafad.atipaxapp.databinding.FragmentAgregarTourBinding
-import com.aglafad.atipaxapp.databinding.FragmentHotelAgregarBinding
-import com.aglafad.atipaxapp.databinding.FragmentProveedorAgregarBinding
-import com.aglafad.atipaxapp.entity.Hotel
 import com.aglafad.atipaxapp.entity.Proveedor
 import com.aglafad.atipaxapp.entity.Tour
+import com.aglafad.atipaxapp.room.AlmacenDatabase
 import com.aglafad.atipaxapp.ui.adapter.ProveedorAutoCompleteAdapter
 import com.aglafad.atipaxapp.ui.viewmodel.*
-import com.aglafad.atipaxapp.ui.views.hotel.HotelAgregarFragmentArgs
-import com.aglafad.atipaxapp.ui.views.hotel.HotelAgregarFragmentDirections
-import com.aglafad.atipaxapp.ui.views.proveedor.ProveedorAgregarFragmentDirections
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
@@ -35,7 +31,10 @@ class AgregarTourFragment : Fragment() {
     private val tViewModel: TourViewModel by activityViewModels {
 
         val repositoryTour= requireContext().applicationContext as AtipaxApplication
-        TourViewModelFactory(repositoryTour.repositoryTour)
+        val database = Room.databaseBuilder(requireContext(), AlmacenDatabase::class.java, "BDAtipaxGroup")
+            .build()
+        val tourDao = database.tourDao()
+        TourViewModelFactory(repositoryTour.repositoryTour, tourDao)
     }
     private val proveedorViewModel: ProveedorViewModel by viewModels {
         val repositoryProvee = requireContext().applicationContext as AtipaxApplication

@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -16,21 +15,13 @@ import com.aglafad.atipaxapp.databinding.FragmentHotelAgregarBinding
 import com.aglafad.atipaxapp.entity.Hotel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import androidx.navigation.fragment.findNavController
+import androidx.room.Room
 import com.aglafad.atipaxapp.AtipaxApplication
 import com.aglafad.atipaxapp.entity.Proveedor
-import com.aglafad.atipaxapp.repository.ProveedorRepository
 import com.aglafad.atipaxapp.room.AlmacenDatabase
-import com.aglafad.atipaxapp.room.ProveedorDao
-import com.aglafad.atipaxapp.ui.adapter.ProveedorAdapter
+import com.aglafad.atipaxapp.room.HotelDao
 import com.aglafad.atipaxapp.ui.adapter.ProveedorAutoCompleteAdapter
 import com.aglafad.atipaxapp.ui.viewmodel.*
-
-import com.aglafad.atipaxapp.ui.views.hotel.HotelAgregarFragmentArgs
-import com.aglafad.atipaxapp.ui.views.hotel.HotelAgregarFragmentDirections
-import com.aglafad.atipaxapp.ui.views.proveedor.ManteProveedorFragmentDirections
-import com.aglafad.atipaxapp.ui.views.proveedor.ProveedorAgregarFragmentDirections
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 
 class HotelAgregarFragment : Fragment() {
   private var _binding: FragmentHotelAgregarBinding? = null
@@ -38,8 +29,11 @@ class HotelAgregarFragment : Fragment() {
 
     private val hViewModel: HotelViewModel by activityViewModels {
 
-       val repositoryHote = requireContext().applicationContext as AtipaxApplication
-       HotelViewModelFactory(repositoryHote.repositoryHotel)
+        val database = Room.databaseBuilder(requireContext(), AlmacenDatabase::class.java, "BDAtipaxGroup")
+            .build()
+        val hotelDao = database.hotelDao()
+        val repositoryHote = requireContext().applicationContext as AtipaxApplication
+        HotelViewModelFactory(repositoryHote.repositoryHotel, hotelDao)
     }
     private val proveedorViewModel: ProveedorViewModel by viewModels {
         val repositoryProvee = requireContext().applicationContext as AtipaxApplication

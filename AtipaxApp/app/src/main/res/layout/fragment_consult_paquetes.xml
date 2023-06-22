@@ -5,78 +5,62 @@
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".ui.views.tour.ConsultPaquetesFragment">
-    <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/linearLayout"
+
+    <TextView
+            android:id="@+id/lbl_titulo_p"
+            android:layout_width="78dp"
+            android:layout_height="25dp"
+            android:text="@string/consulta_paquetes_titulo"
+            android:textSize="17dp"
+            android:textColor="@color/titul"
+            app:layout_constraintStart_toEndOf="@+id/btn_volver_inicio"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtBuscar"
+            android:layout_marginEnd="128dp"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            app:layout_constraintEnd_toEndOf="parent">
-        <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="4dp">
-            <ImageButton
-                    android:text="@string/btnVolver"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:id="@+id/btn_volver_inicio"
-                    android:src="@drawable/ic_atras"
+    <ImageButton
+            android:text="@string/btnVolver"
+            android:layout_width="44dp"
+            android:layout_height="27dp"
+            android:id="@+id/btn_volver_inicio"
+            android:src="@drawable/ic_atras"
+            android:background="@color/white"
+            android:foreground="@drawable/ic_atras"
+            app:layout_constraintEnd_toStartOf="@+id/lbl_titulo_p"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/txtBuscar"
+            app:layout_constraintStart_toStartOf="parent" />
 
-                    android:background="@color/white" />
-            <TextView
-                    android:id="@+id/lbl_titulo_p"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:text="Paquetes de Viaje"
-                    android:textSize="17dp"
-                    android:layout_marginTop="6dp"
-                    android:textColor="@color/titul"
-                    android:layout_marginLeft="60dp"
-
-                    android:fontFamily="@font/varela_round" />
-        </LinearLayout>
-        <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                app:cardUseCompatPadding="true"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp"
-                android:layout_marginTop="15dp"
-                >
-            <androidx.appcompat.widget.SearchView
-                    android:id="@+id/searchFull"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:queryHint="Paquete"
-                    app:iconifiedByDefault="false"
-                    app:queryBackground="@android:color/transparent"
-                    android:outlineAmbientShadowColor="@color/verde"/>
-
-
-        </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_proveedores"
-            android:layout_width="374dp"
-            android:layout_height="0dp"
-
-            tools:itemCount="7"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:text="@string/btn_agregar_h"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="40dp"
+    <EditText
+            android:layout_width="297dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/txtBuscar"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_titulo_p"
+            android:layout_marginEnd="24dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/rvPaquetes"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="24dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="376dp"
+            android:layout_height="605dp"
+            android:id="@+id/rvPaquetes"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtBuscar"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="15dp" />
+            android:layout_marginBottom="16dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
