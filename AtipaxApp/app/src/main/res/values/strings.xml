@@ -150,4 +150,6 @@
 
     <!-- FRAGMENT CONSULTA PAQUETES-->
     <string name="consulta_paquetes_titulo">Paquetes</string>
+
+
 </resources>
