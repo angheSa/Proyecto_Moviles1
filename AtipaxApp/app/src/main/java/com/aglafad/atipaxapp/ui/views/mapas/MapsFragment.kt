@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsFragment : Fragment() {
+
     private var _binding: FragmentMapsBinding? = null
     private val binding get() = _binding!!
     private val callback = OnMapReadyCallback { googleMap ->
@@ -30,21 +31,30 @@ class MapsFragment : Fragment() {
          * user has installed Google Play services and returned to the app.
          */
         /*centro*/
-        val centro = LatLng(-150.0, -155.0)
-        /*marcador 1*/
-        val Hotel1 = LatLng(-34.0, 151.0)
-        /*marcador 2*/
-        val Hotel2 = LatLng(-35.0, -152.0)
+        val centro = LatLng(-12.103295606571992, -77.03186400006827)
+        /*marcador 1 -12.103295606571992, -77.03186400006827*/
+        val Atipax = LatLng(-12.103295606571992, -77.03186400006827)
+        /*marcador 2 -12.104187284533925, -77.0317459828462*/
+        val Hotel2 = LatLng(-12.104187284533925, -77.03186400006827)
 
-        googleMap.addMarker(MarkerOptions().position(Hotel1).title("Hotel1: name"))
+        googleMap.addMarker(MarkerOptions().position(Atipax).title("Atipax Group"))
         googleMap.addMarker(MarkerOptions().position(Hotel2).title("Hotel2: name"))
 
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centro, 14f))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centro, 15f))
 
         /*otra vista*/
-        googleMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
-    }
+        googleMap.mapType = GoogleMap.MAP_TYPE_NORMAL
 
+        binding.tgbOpciones.addOnButtonCheckedListener { group, checkedId, isChecked ->
+            if (isChecked) {
+                when(checkedId) {
+                    binding.btnNormal.id -> googleMap.mapType = GoogleMap.MAP_TYPE_NORMAL
+                    binding.btnSatelite.id -> googleMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
+                    binding.btnHibrido.id -> googleMap.mapType = GoogleMap.MAP_TYPE_HYBRID
+                }
+            }
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -54,6 +64,8 @@ class MapsFragment : Fragment() {
         _binding = FragmentMapsBinding.inflate(inflater,container,false)
         return binding.root
 
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -61,6 +73,9 @@ class MapsFragment : Fragment() {
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
+
+
+
         
 
     }
