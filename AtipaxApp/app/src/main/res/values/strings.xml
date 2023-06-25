@@ -151,5 +151,8 @@
     <!-- FRAGMENT CONSULTA PAQUETES-->
     <string name="consulta_paquetes_titulo">Paquetes</string>
 
+    <!-- FRAGMENT CONSULTAS FULLDAYS-->
+    <string name="consulta_titulo_fulldays">Full days</string>
+
 
 </resources>
