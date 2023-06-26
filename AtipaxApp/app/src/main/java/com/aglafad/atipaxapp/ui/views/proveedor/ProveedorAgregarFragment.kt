@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -77,6 +78,22 @@ class ProveedorAgregarFragment : Fragment() {
             val direc = binding.txtDireccion.editText?.text.toString()
             val corr = binding.txtCorreo.editText?.text.toString()
             val tef = binding.txtTelefono.editText?.text.toString()
+            if(nombr.isEmpty()){
+                binding.txtNombre.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(direc.isEmpty()){
+                binding.txtDireccion.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(corr.isEmpty()){
+                binding.txtCorreo.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(tef.isEmpty()){
+                binding.txtTelefono.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
 
             val objProveedor = Proveedor(0,nombr,direc,corr,tef.toInt())
             // pasamos al objeto los valores
@@ -105,6 +122,24 @@ class ProveedorAgregarFragment : Fragment() {
             val corr = binding.txtCorreo.editText?.text.toString()
             val tef = binding.txtTelefono.editText?.text.toString()
             val co = proveSelecc?.id_provee
+
+            if(nombr.isEmpty()){
+                binding.txtNombre.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(direc.isEmpty()){
+                binding.txtDireccion.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(corr.isEmpty()){
+                binding.txtCorreo.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(tef.isEmpty()){
+                binding.txtTelefono.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+
             if (co != null) {
                 val objProveedor = Proveedor(co,nombr,direc,corr,tef.toInt())
 
@@ -124,7 +159,18 @@ class ProveedorAgregarFragment : Fragment() {
 
 
     }
-
+        binding.txtNombre.editText?.addTextChangedListener {
+            binding.txtNombre.error = null
+        }
+        binding.txtDireccion.editText?.addTextChangedListener {
+            binding.txtDireccion.error = null
+        }
+        binding.txtCorreo.editText?.addTextChangedListener {
+            binding.txtCorreo.error = null
+        }
+        binding.txtTelefono.editText?.addTextChangedListener {
+            binding.txtTelefono.error = null
+        }
         binding.btnEliminar.setOnClickListener {
             val co = proveSelecc?.id_provee
             if (co != null) {

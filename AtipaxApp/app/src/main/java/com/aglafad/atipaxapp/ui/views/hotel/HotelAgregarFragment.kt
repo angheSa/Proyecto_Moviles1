@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AutoCompleteTextView
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
@@ -116,6 +117,28 @@ class HotelAgregarFragment : Fragment() {
             val descri = binding.txtDescripcion.editText?.text.toString()
             val preci = binding.txtPrecio.editText?.text.toString()
            val prov = binding.autoComProveedor.text.toString()
+            if(destin.isEmpty()){
+                binding.txtDestino.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(nombr.isEmpty()){
+                binding.txtNombre.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(descri.isEmpty()){
+                binding.txtDescripcion.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+
+            if(preci.isEmpty()){
+                binding.txtPrecio.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+
+            if(prov.isEmpty()){
+                binding.txtProveedor.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
 
             // pasamos al objeto los valores
           val objHotel = Hotel(0,destin,nombr,descri,preci.toDouble(),prov.toInt())
@@ -140,6 +163,28 @@ class HotelAgregarFragment : Fragment() {
             val preci = binding.txtPrecio.editText?.text.toString()
            val prov = binding.txtProveedor.editText?.text.toString()
             val co = hotelSelecc?.id
+            if(destin.isEmpty()){
+                binding.txtDestino.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(nombr.isEmpty()){
+                binding.txtNombre.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(descri.isEmpty()){
+                binding.txtDescripcion.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+
+            if(preci.isEmpty()){
+                binding.txtPrecio.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+
+            if(prov.isEmpty()){
+                binding.txtProveedor.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
             if (co != null) {
             // pasamos al objeto los valores
           val objHotel = Hotel(co,destin,nombr,descri,preci.toDouble(),prov.toInt())
@@ -157,7 +202,21 @@ class HotelAgregarFragment : Fragment() {
                 .show()
                  }
         }
-
+        binding.txtNombre.editText?.addTextChangedListener {
+            binding.txtNombre.error = null
+        }
+        binding.txtDescripcion.editText?.addTextChangedListener {
+            binding.txtDescripcion.error = null
+        }
+        binding.txtDestino.editText?.addTextChangedListener {
+            binding.txtDestino.error = null
+        }
+        binding.txtPrecio.editText?.addTextChangedListener {
+            binding.txtPrecio.error = null
+        }
+        binding.txtProveedor.editText?.addTextChangedListener {
+            binding.txtProveedor.error = null
+        }
         binding.btnEliminar.setOnClickListener {
             val co = hotelSelecc?.id
             if (co != null) {

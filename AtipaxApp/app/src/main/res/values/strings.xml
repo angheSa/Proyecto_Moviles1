@@ -155,4 +155,6 @@
     <string name="consulta_titulo_fulldays">Full days</string>
 
 
+    <string name="campo">*Obligatorio</string>
+    <string name="solonumero">Solo 9 dígitos</string>
 </resources>

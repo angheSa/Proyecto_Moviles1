@@ -9,22 +9,16 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.ConcatAdapter
 import androidx.room.Room
 import com.aglafad.atipaxapp.AtipaxApplication
-import com.aglafad.atipaxapp.R
 import com.aglafad.atipaxapp.databinding.FragmentConsultFullDayBinding
-import com.aglafad.atipaxapp.databinding.FragmentManteHotelBinding
+
 import com.aglafad.atipaxapp.entity.Hotel
-import com.aglafad.atipaxapp.entity.Tour
 import com.aglafad.atipaxapp.room.AlmacenDatabase
 import com.aglafad.atipaxapp.ui.adapter.HotelAdapter
-import com.aglafad.atipaxapp.ui.adapter.TourAdapter
 import com.aglafad.atipaxapp.ui.viewmodel.HotelViewModel
 import com.aglafad.atipaxapp.ui.viewmodel.HotelViewModelFactory
-import com.aglafad.atipaxapp.ui.viewmodel.TourViewModel
-import com.aglafad.atipaxapp.ui.viewmodel.TourViewModelFactory
-import com.aglafad.atipaxapp.ui.views.proveedor.ManteProveedorFragmentDirections
+
 import kotlinx.coroutines.launch
 
 class ConsultFullDayFragment : Fragment() {
@@ -32,9 +26,8 @@ class ConsultFullDayFragment : Fragment() {
     private var _binding: FragmentConsultFullDayBinding? = null
     private val binding get() = _binding!!
     private lateinit var listaHotel : List<Hotel>
-    private lateinit var listaTour : List<Tour>
 
-    //For Hotel
+
     private lateinit var hotelAdapter : HotelAdapter
 
     private val hotelViewModel : HotelViewModel by viewModels {
@@ -45,19 +38,12 @@ class ConsultFullDayFragment : Fragment() {
         HotelViewModelFactory(repositoryHotel.repositoryHotel, hotelDao)
     }
     //For Tour
-    private lateinit var tourAdapter: TourAdapter
-    private val tourViewModel : TourViewModel by viewModels{
-        val database = Room.databaseBuilder(requireContext(), AlmacenDatabase::class.java, "BDAtipaxGroup")
-            .build()
-        val tourDao = database.tourDao()
-        val repositoryTour = requireContext().applicationContext as AtipaxApplication
-        TourViewModelFactory(repositoryTour.repositoryTour, tourDao)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         _binding = FragmentConsultFullDayBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -67,47 +53,36 @@ class ConsultFullDayFragment : Fragment() {
         hotelViewModel.hotels.observe(viewLifecycleOwner) { list ->
             hotelAdapter.listasHoteles(list)
         }
-        tourViewModel.tours.observe(viewLifecycleOwner){list ->
-            tourAdapter.listasTours(list)
-        }
+
         binding.btnVolverInicio.setOnClickListener {
             val accion = ConsultFullDayFragmentDirections.actionConsultFullDayFragmentToInicioFragment()
             findNavController().navigate(accion)
         }
 
-        tourAdapter = TourAdapter(
-            onclick = {selectedTour ->
-            }
-        )
         hotelAdapter = HotelAdapter(
             onclick = {selectedHotel ->
             }
         )
 
-        var concatAdapters = ConcatAdapter(tourAdapter,hotelAdapter)
-        binding.rvfulldays.adapter = concatAdapters
+        var concatAdapters = hotelAdapter
+        binding.rvHoteles.adapter = concatAdapters
         fun buscarFiltrados(){
-            var textoIngresado : String = binding.txtBuscarfd.text.toString()
+            var textoIngresado : String = binding.txtBuscar.text.toString()
             if(textoIngresado.isEmpty()){
                 listaHotel = listOf()
-                listaTour = listOf()
                 hotelAdapter.listas.clear()
-                tourAdapter.listas.clear()
                 hotelViewModel.hotels.observe(viewLifecycleOwner) { list ->
                     hotelAdapter.listasHoteles(list)
                 }
-                tourViewModel.tours.observe(viewLifecycleOwner){list ->
-                    tourAdapter.listasTours(list)
-                }
+
                 hotelAdapter.listasHoteles(listaHotel)
                 hotelAdapter.notifyDataSetChanged()
-                tourAdapter.listasTours(listaTour)
-                concatAdapters = ConcatAdapter(tourAdapter,hotelAdapter)
-                binding.rvfulldays.adapter = concatAdapters
+
+                concatAdapters = hotelAdapter
+                binding.rvHoteles.adapter = concatAdapters
 
             }else {
                 hotelAdapter.listas.clear()
-                tourAdapter.listas.clear()
                 lifecycleScope.launch {
                     val listaHotelesF = hotelViewModel.buscarHotelesXFiltro(
                         textoIngresado,
@@ -122,26 +97,13 @@ class ConsultFullDayFragment : Fragment() {
                     hotelAdapter.notifyDataSetChanged()
 
                 }
-                lifecycleScope.launch {
-                    val listaToursF = tourViewModel.buscarToursXFiltro(
-                        textoIngresado,
-                        textoIngresado,
-                        textoIngresado
-                    )
-                    println("LA LISTA EL EN FRAGMENT ES: " + listaToursF)
-                    // Hacer algo con la lista de hoteles filtrados
-                    if (listaToursF != null) {
-                        tourAdapter.actualizarDatos(listaToursF)
-                    }
-                    tourAdapter.notifyDataSetChanged()
 
-                }
 
             }
         }
 
 
-        binding.txtBuscarfd.addTextChangedListener{
+        binding.txtBuscar.addTextChangedListener{
             buscarFiltrados()
         }
     }

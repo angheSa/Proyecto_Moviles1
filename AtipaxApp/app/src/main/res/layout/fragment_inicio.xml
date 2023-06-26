@@ -42,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="13sp"
-                    android:text="Paquete"
+                    android:text="C. Tours"
                     android:textColor="@color/black"/>
 
         </LinearLayout>
@@ -78,7 +78,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="13sp"
-                    android:text="Full Day"
+                    android:text="C.Hoteles"
                     android:textColor="@color/black"/>
 
         </LinearLayout>
@@ -217,14 +217,14 @@
             <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_proveedor">
+                    android:src="@drawable/ic_map">
             </ImageView>
 
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="13sp"
-                    android:text="Api"
+                    android:text="Mapa"
                     android:textColor="@color/black"/>
 
         </LinearLayout>

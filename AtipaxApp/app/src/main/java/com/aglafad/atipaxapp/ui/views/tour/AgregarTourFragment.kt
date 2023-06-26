@@ -1,11 +1,14 @@
 package com.aglafad.atipaxapp.ui.views.tour
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AutoCompleteTextView
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -26,7 +29,6 @@ class AgregarTourFragment : Fragment() {
 
     private var _binding: FragmentAgregarTourBinding? = null
     private val binding get() = _binding!!
-
 
     private val tViewModel: TourViewModel by activityViewModels {
 
@@ -85,9 +87,6 @@ class AgregarTourFragment : Fragment() {
             binding.btnEliminar.visibility = View.GONE
             binding.btnVolverMante.visibility = View.VISIBLE
         } else {
-
-
-
             val tip = tourSelecc?.tipo.toString()
             val des = tourSelecc?.destino.toString()
             val descr = tourSelecc?.descripcion.toString()
@@ -115,11 +114,32 @@ class AgregarTourFragment : Fragment() {
             val descri = binding.txtDescripcion.editText?.text.toString()
             val preci = binding.txtPrecio.editText?.text.toString()
             val prov = binding.autoComProveedor.text.toString()
+            if(destin.isEmpty()){
+                binding.txtDestino.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
 
+            if(descri.isEmpty()){
+                binding.txtDescripcion.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(tipo.isEmpty()){
+                binding.txtTipo.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(preci.isEmpty()){
+                binding.txtPrecio.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+
+
+
+            if(prov.isEmpty()){
+                binding.txtProveedor.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
             // pasamos al objeto los valores
             val objTour = Tour(0,destin,tipo,descri,preci.toDouble(),prov.toInt())
-
-
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(resources.getString(R.string.alerta_p))
                 .setMessage(resources.getString(R.string.mensaje_guardar))
@@ -132,17 +152,44 @@ class AgregarTourFragment : Fragment() {
                 .show()
         }
 
+
+
         binding.btnEditar.setOnClickListener{
             //Declaramos los datos a actualizar
-            val tip = binding.txtTipo.editText?.text.toString()
+            val tipo = binding.txtTipo.editText?.text.toString()
             val destin = binding.txtDestino.editText?.text.toString()
             val descri = binding.txtDescripcion.editText?.text.toString()
             val preci = binding.txtPrecio.editText?.text.toString()
             val prov = binding.txtProveedor.editText?.text.toString()
+            if(destin.isEmpty()){
+                binding.txtDestino.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(descri.isEmpty()){
+                binding.txtDescripcion.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+            if(tipo.isEmpty()){
+                binding.txtTipo.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+
+
+            if(preci.isEmpty()){
+                binding.txtPrecio.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+
+            if(prov.isEmpty()){
+                binding.txtProveedor.error = resources.getString(R.string.campo)
+                return@setOnClickListener
+            }
+
+
             val co = tourSelecc?.id
             if (co != null) {
                 // pasamos al objeto los valores
-                val objTour = Tour(co,destin,tip,descri,preci.toDouble(),prov.toInt())
+                val objTour = Tour(co,destin,tipo,descri,preci.toDouble(),prov.toInt())
 
                 MaterialAlertDialogBuilder(requireContext())
                     .setTitle(resources.getString(R.string.alerta_p))
@@ -158,6 +205,21 @@ class AgregarTourFragment : Fragment() {
             }
         }
 
+        binding.txtTipo.editText?.addTextChangedListener {
+            binding.txtTipo.error = null
+        }
+        binding.txtDestino.editText?.addTextChangedListener {
+            binding.txtDestino.error = null
+        }
+        binding.txtProveedor.editText?.addTextChangedListener {
+            binding.txtProveedor.error = null
+        }
+        binding.txtDescripcion.editText?.addTextChangedListener {
+            binding.txtDescripcion.error = null
+        }
+        binding.txtPrecio.editText?.addTextChangedListener {
+            binding.txtPrecio.error = null
+        }
         binding.btnEliminar.setOnClickListener {
             val co = tourSelecc?.id
             if (co != null) {
