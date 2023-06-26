@@ -58,8 +58,6 @@ class AgregarTourFragment : Fragment() {
         val autoCompleteProveedor: AutoCompleteTextView = binding.autoComProveedor
 
         var proveedorList = mutableListOf<Proveedor>()
-        //    val proveedorAdapter = ProveedorAutoCompleteAdapter(requireContext(), proveedorList)
-        //  autoCompletePoveedor.setAdapter(proveedorAdapter)
 
 
         val proveedorAdapter = ProveedorAutoCompleteAdapter(requireContext(), proveedorList)

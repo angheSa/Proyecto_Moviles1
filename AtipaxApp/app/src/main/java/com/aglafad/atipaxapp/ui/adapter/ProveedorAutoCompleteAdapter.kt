@@ -18,13 +18,17 @@ import kotlinx.coroutines.flow.filter
 class ProveedorAutoCompleteAdapter(context: Context,  provee: List<Proveedor>):
     ArrayAdapter<Proveedor>(context,0,provee) {
 
+    // este metodo dvuelve la vista del elemento que estarán en el layout item_cbo_proveedor
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.item_cbo_proveedor, parent, false)
-        getItem(position)?.let { proveedor ->
-            view.findViewById<TextView>(R.id.textCbo).apply {
-                text = proveedor.nombre.toString()
-            }
+
+        val proveedor = getItem(position)
+        val textCbo = view.findViewById<TextView>(R.id.textCbo)
+
+        proveedor?.let {
+            textCbo.text = it.nombre.toString()
         }
+
         return view
     }
 
