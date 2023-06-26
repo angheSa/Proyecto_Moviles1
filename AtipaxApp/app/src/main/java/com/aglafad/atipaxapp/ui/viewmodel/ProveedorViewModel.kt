@@ -24,9 +24,9 @@ class ProveedorViewModel (private val repository: ProveedorRepository) : ViewMod
             repository.actualizar(proveedor)
         }
     }
-    fun eliminar(id: Int){
+    fun eliminar(nombre: String){
         viewModelScope.launch {
-            repository.eliminar(id)
+            repository.eliminar(nombre)
         }
     }
 

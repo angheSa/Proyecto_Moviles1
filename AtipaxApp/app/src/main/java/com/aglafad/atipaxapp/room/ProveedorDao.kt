@@ -16,8 +16,8 @@ interface ProveedorDao {
     @Update(onConflict = OnConflictStrategy.IGNORE)
     suspend fun update(proveedor: Proveedor)
 
-    @Query("DELETE FROM tb_proveedor where id_provee = :id")
-    suspend fun delete(id: Int)
+    @Query("DELETE FROM tb_proveedor where nom_proveedor = :nombre")
+    suspend fun delete(nombre: String)
 
    /* @Query("SELECT * FROM tb_proveedor where  nom_proveedor = :nombre")
     suspend fun searchForName(nombre : String): Flow<List<Proveedor>>*/

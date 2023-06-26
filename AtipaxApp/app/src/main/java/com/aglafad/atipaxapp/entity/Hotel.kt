@@ -8,7 +8,7 @@ import androidx.room.ForeignKey
 
 @Entity(tableName = "tb_hotel",
     foreignKeys = [
-        ForeignKey(entity = Proveedor::class, parentColumns = ["id_provee"], childColumns = ["idProvee"])
+        ForeignKey(entity = Proveedor::class, parentColumns = ["nom_proveedor"], childColumns = ["idProvee"])
     ]
 
     )
@@ -17,5 +17,5 @@ class Hotel  (@PrimaryKey(autoGenerate = true) @ColumnInfo(name = "id_hotel" ) v
               @ColumnInfo(name = "destino_hotel" ) val destinoHotel: String?,
               @ColumnInfo(name = "descripcion_hotel" ) val descripcion: String?,
               @ColumnInfo(name = "precio_hotel" ) val precio: Double?,
-              @ColumnInfo(name = "idProvee" ) val idProveedor: Int?): Serializable {
+              @ColumnInfo(name = "idProvee" ) val idProveedor: String?): Serializable {
 }

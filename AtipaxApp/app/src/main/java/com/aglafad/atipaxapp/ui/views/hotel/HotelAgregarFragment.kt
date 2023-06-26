@@ -73,7 +73,7 @@ class HotelAgregarFragment : Fragment() {
         // pasar el id al txt
         autoCompleteProveedor.setOnItemClickListener { _, _, position, _ ->
             val selectedProveedor = proveedorAdapter.getItem(position)
-            val proveedorCode = selectedProveedor?.id_provee.toString()
+            val proveedorCode = selectedProveedor?.nombre.toString()
             autoCompleteProveedor.setText(proveedorCode, false)
         }
 
@@ -141,7 +141,7 @@ class HotelAgregarFragment : Fragment() {
             }
 
             // pasamos al objeto los valores
-          val objHotel = Hotel(0,destin,nombr,descri,preci.toDouble(),prov.toInt())
+          val objHotel = Hotel(0,destin,nombr,descri,preci.toDouble(),prov)
 
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(resources.getString(R.string.alerta_p))
@@ -187,7 +187,7 @@ class HotelAgregarFragment : Fragment() {
             }
             if (co != null) {
             // pasamos al objeto los valores
-          val objHotel = Hotel(co,destin,nombr,descri,preci.toDouble(),prov.toInt())
+          val objHotel = Hotel(co,destin,nombr,descri,preci.toDouble(),prov)
 
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(resources.getString(R.string.alerta_p))

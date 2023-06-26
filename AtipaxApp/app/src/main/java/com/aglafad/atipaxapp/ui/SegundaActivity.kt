@@ -59,7 +59,7 @@ class SegundaActivity : AppCompatActivity() {
         }
 
     }
-        
+
 
     /*NECESARIO PARA EL MENU*/
     override fun onSupportNavigateUp(): Boolean {

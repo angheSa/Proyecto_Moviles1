@@ -22,7 +22,7 @@ class ProveedorAutoCompleteAdapter(context: Context,  provee: List<Proveedor>):
         val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.item_cbo_proveedor, parent, false)
         getItem(position)?.let { proveedor ->
             view.findViewById<TextView>(R.id.textCbo).apply {
-                text = proveedor.id_provee.toString()
+                text = proveedor.nombre.toString()
             }
         }
         return view

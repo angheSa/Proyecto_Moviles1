@@ -95,7 +95,7 @@ class ProveedorAgregarFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            val objProveedor = Proveedor(0,nombr,direc,corr,tef.toInt())
+            val objProveedor = Proveedor(nombr,direc,corr,tef.toInt())
             // pasamos al objeto los valores
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(resources.getString(R.string.alerta_p))
@@ -121,7 +121,7 @@ class ProveedorAgregarFragment : Fragment() {
             val direc = binding.txtDireccion.editText?.text.toString()
             val corr = binding.txtCorreo.editText?.text.toString()
             val tef = binding.txtTelefono.editText?.text.toString()
-            val co = proveSelecc?.id_provee
+
 
             if(nombr.isEmpty()){
                 binding.txtNombre.error = resources.getString(R.string.campo)
@@ -140,8 +140,8 @@ class ProveedorAgregarFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            if (co != null) {
-                val objProveedor = Proveedor(co,nombr,direc,corr,tef.toInt())
+
+                val objProveedor = Proveedor(nombr,direc,corr,tef.toInt())
 
                 MaterialAlertDialogBuilder(requireContext())
                     .setTitle(resources.getString(R.string.alerta))
@@ -155,7 +155,7 @@ class ProveedorAgregarFragment : Fragment() {
                     }
                     .show()
 
-            }
+
 
 
     }
@@ -172,14 +172,14 @@ class ProveedorAgregarFragment : Fragment() {
             binding.txtTelefono.error = null
         }
         binding.btnEliminar.setOnClickListener {
-            val co = proveSelecc?.id_provee
-            if (co != null) {
+            val nom = proveSelecc?.nombre
+            if (nom != null) {
                 MaterialAlertDialogBuilder(requireContext())
                     .setTitle(resources.getString(R.string.alerta_p))
                     .setMessage(resources.getString(R.string.mensaje_eliminar_p))
                     .setNegativeButton("Cancelar", null)
                     .setPositiveButton(resources.getString(R.string.aceptar_p)){ _, _ ->
-                        proViewModel.eliminar(co)
+                        proViewModel.eliminar(nom)
                         val action = ProveedorAgregarFragmentDirections.actionProveedorAgregarFragmentToManteProveedorFragment()
                         findNavController().navigate(action)
                     }

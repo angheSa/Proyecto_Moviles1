@@ -73,7 +73,7 @@ class AgregarTourFragment : Fragment() {
         // pasar el id al txt
         autoCompleteProveedor.setOnItemClickListener { _, _, position, _ ->
             val selectedProveedor = proveedorAdapter.getItem(position)
-            val proveedorCode = selectedProveedor?.id_provee.toString()
+            val proveedorCode = selectedProveedor?.nombre.toString()
             autoCompleteProveedor.setText(proveedorCode, false)
         }
 
@@ -139,7 +139,7 @@ class AgregarTourFragment : Fragment() {
                 return@setOnClickListener
             }
             // pasamos al objeto los valores
-            val objTour = Tour(0,destin,tipo,descri,preci.toDouble(),prov.toInt())
+            val objTour = Tour(0,destin,tipo,descri,preci.toDouble(),prov)
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle(resources.getString(R.string.alerta_p))
                 .setMessage(resources.getString(R.string.mensaje_guardar))
@@ -189,7 +189,7 @@ class AgregarTourFragment : Fragment() {
             val co = tourSelecc?.id
             if (co != null) {
                 // pasamos al objeto los valores
-                val objTour = Tour(co,destin,tipo,descri,preci.toDouble(),prov.toInt())
+                val objTour = Tour(co,destin,tipo,descri,preci.toDouble(),prov)
 
                 MaterialAlertDialogBuilder(requireContext())
                     .setTitle(resources.getString(R.string.alerta_p))

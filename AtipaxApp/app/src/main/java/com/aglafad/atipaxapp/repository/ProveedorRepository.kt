@@ -15,8 +15,8 @@ class ProveedorRepository(private val proveedorDao : ProveedorDao) {
     suspend fun actualizar(proveedor: Proveedor) {
         proveedorDao.update(proveedor)
     }
-    suspend fun eliminar(id: Int) {
-        proveedorDao.delete(id)
+    suspend fun eliminar(nombre: String) {
+        proveedorDao.delete(nombre)
     }
 
    /* suspend fun buscarPorNombre(nombre: String){
