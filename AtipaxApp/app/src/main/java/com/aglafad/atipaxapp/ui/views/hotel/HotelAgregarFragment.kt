@@ -31,7 +31,7 @@ class HotelAgregarFragment : Fragment() {
     private val hViewModel: HotelViewModel by activityViewModels {
 
         val database = Room.databaseBuilder(requireContext(), AlmacenDatabase::class.java, "BDAtipaxGroup")
-            .build()
+            .fallbackToDestructiveMigration().build()
         val hotelDao = database.hotelDao()
         val repositoryHote = requireContext().applicationContext as AtipaxApplication
         HotelViewModelFactory(repositoryHote.repositoryHotel, hotelDao)

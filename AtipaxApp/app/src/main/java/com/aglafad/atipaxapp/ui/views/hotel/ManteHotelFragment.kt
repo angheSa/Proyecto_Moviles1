@@ -27,7 +27,7 @@ class ManteHotelFragment : Fragment() {
     private lateinit var hotelAdapt: HotelAdapter
     private val hViewModel: HotelViewModel by viewModels {
         val database = Room.databaseBuilder(requireContext(), AlmacenDatabase::class.java, "BDAtipaxGroup")
-            .build()
+            .fallbackToDestructiveMigration().build()
         val hotelDao = database.hotelDao()
         val repositoryHo = requireContext().applicationContext as AtipaxApplication
         HotelViewModelFactory(repositoryHo.repositoryHotel, hotelDao)

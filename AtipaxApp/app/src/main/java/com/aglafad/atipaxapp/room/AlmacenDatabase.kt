@@ -11,7 +11,7 @@ import com.aglafad.atipaxapp.entity.Proveedor
 import com.aglafad.atipaxapp.entity.Usuario
 import com.aglafad.atipaxapp.entity.Tour
 
-@Database(entities = [Usuario::class, Proveedor::class,Tour::class, Hotel::class], version = 2)
+@Database(entities = [Usuario::class, Proveedor::class,Tour::class, Hotel::class], version = 3)
 abstract class AlmacenDatabase: RoomDatabase() {
 
     abstract fun usuarioDao(): UsuarioDao

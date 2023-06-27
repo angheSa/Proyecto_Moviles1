@@ -37,9 +37,6 @@ class MapsFragment : Fragment() {
         /*marcador 2 -12.104187284533925, -77.0317459828462*/
         val Hotel2 = LatLng(-12.104187284533925, -77.03186400006827)
 
-        googleMap.addMarker(MarkerOptions().position(Atipax).title("Atipax Group"))
-        googleMap.addMarker(MarkerOptions().position(Hotel2).title("Agregar Ubicacion"))
-
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centro, 15f))
 
         /*otra vista*/

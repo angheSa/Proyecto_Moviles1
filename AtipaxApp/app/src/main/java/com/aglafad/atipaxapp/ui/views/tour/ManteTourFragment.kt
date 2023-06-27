@@ -24,7 +24,7 @@ class ManteTourFragment : Fragment() {
     private lateinit var tourAdapt: TourAdapter
     private val tViewModel: TourViewModel by viewModels {
         val database = Room.databaseBuilder(requireContext(), AlmacenDatabase::class.java, "BDAtipaxGroup")
-            .build()
+            .fallbackToDestructiveMigration().build()
         val tourDao = database.tourDao()
         val repositoryTu = requireContext().applicationContext as AtipaxApplication
         TourViewModelFactory(repositoryTu.repositoryTour, tourDao)

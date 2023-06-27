@@ -33,8 +33,7 @@ class AgregarTourFragment : Fragment() {
     private val tViewModel: TourViewModel by activityViewModels {
 
         val repositoryTour= requireContext().applicationContext as AtipaxApplication
-        val database = Room.databaseBuilder(requireContext(), AlmacenDatabase::class.java, "BDAtipaxGroup")
-            .build()
+        val database = Room.databaseBuilder(requireContext(), AlmacenDatabase::class.java, "BDAtipaxGroup").fallbackToDestructiveMigration().build()
         val tourDao = database.tourDao()
         TourViewModelFactory(repositoryTour.repositoryTour, tourDao)
     }

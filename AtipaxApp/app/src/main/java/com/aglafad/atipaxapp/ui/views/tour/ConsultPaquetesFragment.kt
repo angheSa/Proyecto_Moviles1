@@ -32,6 +32,7 @@ class ConsultPaquetesFragment : Fragment() {
     private lateinit var tourAdapter: TourAdapter
     private val tourViewModel : TourViewModel by viewModels{
         val database = Room.databaseBuilder(requireContext(), AlmacenDatabase::class.java, "BDAtipaxGroup")
+            .fallbackToDestructiveMigration()
             .build()
         val tourDao = database.tourDao()
         val repositoryTour = requireContext().applicationContext as AtipaxApplication

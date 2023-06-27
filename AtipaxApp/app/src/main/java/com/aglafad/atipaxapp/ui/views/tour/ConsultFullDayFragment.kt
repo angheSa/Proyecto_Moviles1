@@ -32,6 +32,7 @@ class ConsultFullDayFragment : Fragment() {
 
     private val hotelViewModel : HotelViewModel by viewModels {
         val database = Room.databaseBuilder(requireContext(), AlmacenDatabase::class.java, "BDAtipaxGroup")
+            .fallbackToDestructiveMigration()
             .build()
         val hotelDao = database.hotelDao()
         val repositoryHotel = requireContext().applicationContext as AtipaxApplication

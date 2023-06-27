@@ -17,10 +17,8 @@ class AtipaxApplication : Application(){
 
 
     val db by lazy {
-        Room.databaseBuilder(
-            applicationContext,
-            AlmacenDatabase::class.java,
-            "BDAtipaxGroup" // Nombre de la base de datos
-        ).build()
+        Room.databaseBuilder(applicationContext, AlmacenDatabase::class.java,"BDAtipaxGroup" )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 }
